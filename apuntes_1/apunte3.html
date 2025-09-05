@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instalación de MAMP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo instalar MAMP para servidores PHP" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Cómo instalar MAMP para servidor PHP</h1>
+      <p class="lead">MAMP es una herramienta que permite instalar fácilmente un servidor local con Apache, MySQL y PHP en Windows o macOS, ideal para desarrollo web.</p>
+        <br>
+      <figure>
+        <img src="../img/mamp.png" alt="Logo de MAMP" class="img-md">
+        <figcaption>Logo de MAMP.</figcaption>
+      </figure>
+
+      <h2>Pasos de instalación</h2>
+      <ol>
+        <li><strong>Descargar MAMP:</strong> Ve a <a href="https://www.mamp.info/" target="_blank">https://www.mamp.info/</a> y descarga la versión correspondiente a tu sistema operativo.</li>
+        <li><strong>Ejecutar el instalador:</strong> Abre el archivo descargado y sigue las instrucciones en pantalla. Puedes dejar las configuraciones predeterminadas.</li>
+        <li><strong>Abrir MAMP:</strong> Una vez instalado, abre la aplicación. Verás los botones para iniciar Apache y MySQL.</li>
+        <figure>
+        <img src="../img/mamp2.png" alt="Descripción de la imagen" class="img-md">
+        </figure>
+        <li><strong>Configurar puertos (opcional):</strong> Por defecto, MAMP usa el puerto 8888 para Apache y 8889 para MySQL. Puedes cambiarlos en las preferencias si es necesario.</li>
+        <li><strong>Probar el servidor:</strong> Haz clic en "Start Servers" y luego abre tu navegador en <code>http://localhost:8888</code>. Deberías ver la página de inicio de MAMP.</li>
+        <li><strong>Crear proyectos PHP:</strong> Coloca tus archivos PHP en la carpeta <code>htdocs</code> dentro del directorio de MAMP. Luego accede a ellos desde el navegador, por ejemplo: <code>http://localhost:8888/mi-proyecto/index.php</code>.</li>
+      </ol>
+
+      <h2>Ventajas de usar MAMP</h2>
+      <ul>
+        <li>Instalación rápida y sin complicaciones.</li>
+        <li>Compatible con Windows y macOS.</li>
+        <li>Incluye Apache, MySQL y PHP configurados automáticamente.</li>
+        <li>Ideal para pruebas locales y desarrollo web antes de subir a un servidor real.</li>
+      </ul>
+
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

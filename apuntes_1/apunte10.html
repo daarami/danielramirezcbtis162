@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Variables en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo funcionan las variables en PHP y cómo usarlas" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Variables en PHP</h1>
+      <p class="lead">Las variables en PHP permiten almacenar datos que luego podemos usar y manipular en nuestro código.</p>
+
+      <figure>
+        <img src="../img/variable.png" alt="Ejemplo de variables en PHP" class="img-md">
+        <figcaption>Ejemplo de declaración de variables en PHP.</figcaption>
+      </figure>
+
+      <h2>Definición y sintaxis</h2>
+      <p>En PHP, todas las variables comienzan con el signo <code>$</code> seguido del nombre de la variable:</p>
+      <pre><code>&lt;?php
+$nombre = "Daniel";
+$edad = 18;
+$activo = true;
+?&gt;</code></pre>
+      <ul>
+        <li>El nombre de la variable debe iniciar con una letra o guion bajo (<code>_</code>).</li>
+        <li>No puede contener espacios ni caracteres especiales.</li>
+        <li>PHP es un lenguaje de tipado dinámico, por lo que no necesitas declarar el tipo de dato.</li>
+      </ul>
+
+      <h2>Tipos de datos comunes</h2>
+      <ul>
+        <li><strong>String:</strong> Texto. Ejemplo: <code>$nombre = "Daniel";</code></li>
+        <li><strong>Integer:</strong> Números enteros. Ejemplo: <code>$edad = 18;</code></li>
+        <li><strong>Float:</strong> Números decimales. Ejemplo: <code>$precio = 45.99;</code></li>
+        <li><strong>Boolean:</strong> Valores true/false. Ejemplo: <code>$activo = true;</code></li>
+        <li><strong>Array:</strong> Colección de valores. Ejemplo: <code>$colores = ["rojo", "verde", "azul"];</code></li>
+      </ul>
+
+      <h2>Uso de variables</h2>
+      <p>Puedes usar las variables para mostrar información, realizar cálculos o concatenar textos:</p>
+      <pre><code>&lt;?php
+echo "Hola, mi nombre es " . $nombre;
+$total = $edad + 5;
+echo "En 5 años tendré $total años";
+?&gt;</code></pre>
+
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

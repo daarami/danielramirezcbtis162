@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instalación de Visual Studio Code – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo instalar Visual Studio Code para desarrollo PHP" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Cómo instalar Visual Studio Code</h1>
+      <p class="lead">Visual Studio Code (VS Code) es un editor de código ligero, gratuito y extensible, ideal para programar en PHP y otros lenguajes.</p>
+
+      <figure>
+        <img src="../img/vscode.png" alt="Logo de Visual Studio Code" class="img-md">
+        <figcaption>Logo de Visual Studio Code.</figcaption>
+      </figure>
+
+      <h2>Pasos de instalación</h2>
+      <ol>
+        <li><strong>Descargar VS Code:</strong> Ve a <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a> y descarga la versión adecuada para tu sistema operativo (Windows, macOS o Linux).</li>
+        <li><strong>Ejecutar el instalador:</strong> Abre el archivo descargado y sigue las instrucciones. Es recomendable dejar las opciones predeterminadas, pero puedes marcar "Add to PATH" para poder abrir VS Code desde la terminal.</li>
+        <figure>
+        <img src="../img/vs2.png" alt="Descripción de la imagen" class="img-md">
+        </figure>
+        <li><strong>Abrir VS Code:</strong> Una vez instalado, abre la aplicación desde el menú de inicio o desde tu carpeta de aplicaciones.</li>
+        <li><strong>Instalar extensiones recomendadas:</strong> Para desarrollo PHP, busca e instala las extensiones:
+          <ul>
+            <li><code>PHP Intelephense</code> → Autocompletado y soporte avanzado de PHP.</li>
+            <li><code>PHP Debug</code> → Para depuración con XDebug.</li>
+            <li><code>HTML CSS Support</code> → Mejora soporte de HTML y CSS.</li>
+          </ul>
+        </li>
+        <li><strong>Configurar tu espacio de trabajo:</strong> Crea una carpeta para tus proyectos PHP y ábrela en VS Code. Esto permitirá usar el explorador de archivos, terminal integrada y depuración fácilmente.</li>
+        <li><strong>Probar un archivo PHP:</strong> Crea un archivo <code>index.php</code> dentro de tu proyecto y escribe <code>&lt;?php phpinfo(); ?&gt;</code>. Luego, abre tu servidor local (como MAMP) y accede desde el navegador para verificar que PHP funciona.</li>
+      </ol>
+
+      <h2>Ventajas de usar VS Code</h2>
+      <ul>
+        <li>Editor ligero, rápido y multiplataforma.</li>
+        <li>Soporte para depuración y control de versiones integrado (Git).</li>
+        <li>Extensiones para casi cualquier lenguaje y framework.</li>
+        <li>Terminal integrada y personalizable para ejecutar comandos PHP.</li>
+      </ul>
+
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

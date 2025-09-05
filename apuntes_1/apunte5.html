@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crear carpeta de trabajo – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo crear una carpeta de trabajo para proyectos web" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Cómo crear una carpeta de trabajo</h1>
+      <p class="lead">Antes de comenzar cualquier proyecto web, es importante organizar tus archivos dentro de una carpeta de trabajo. Esto facilita el manejo de archivos y evita confusiones.</p>
+
+      <figure>
+        <img src="../img/carpeta.png" alt="Ejemplo de carpeta de trabajo" class="img-md">
+        <figcaption>Ejemplo de carpeta de trabajo llamada "Trabajos Modulo".</figcaption>
+      </figure>
+
+      <h2>Pasos para crear tu carpeta de trabajo</h2>
+      <ol>
+        <li><strong>Elegir la ubicación:</strong> Abre tu explorador de archivos y navega a la ubicación donde quieras crear tu carpeta. En este ejemplo, elegimos la carpeta <code>Documentos</code>.</li>
+        <figure>
+        <img src="../img/carpetas.png" alt="Descripción de la imagen" class="img-md">
+        </figure>
+        <li><strong>Crear la carpeta:</strong> Haz clic derecho y selecciona <em>Nuevo → Carpeta</em></li>
+        <figure>
+        <img src="../img/carpetas2.png" alt="Descripción de la imagen" class="img-md">
+        </figure>
+        <li><strong>Nombrar la carpeta:</strong> Escribe un nombre descriptivo para tu proyecto. Por ejemplo: <code>Trabajos Modulo</code>. Este será tu directorio principal para todos los archivos de la página web.</li>
+        <figure>
+        <img src="../img/carpetas3.png" alt="Descripción de la imagen" class="img-md">
+        </figure>
+      </ol>
+
+      <h2>Recomendaciones</h2>
+      <ul>
+        <li>Mantén nombres claros y sin espacios excesivos. Por ejemplo, <code>Trabajos_Modulo</code> también es válido.</li>
+        <li>Organiza siempre tus archivos en subcarpetas según su tipo para mayor claridad.</li>
+        <li>Evita colocar archivos sueltos en otras ubicaciones fuera de tu carpeta de trabajo.</li>
+      </ul>
+
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

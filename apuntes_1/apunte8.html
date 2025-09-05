@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cómo guardar archivos en VS Code – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo guardar archivos en Visual Studio Code" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Cómo guardar archivos en Visual Studio Code</h1>
+      <p class="lead">Guardar archivos correctamente es esencial para no perder tus avances y mantener tu proyecto organizado.</p>
+
+      <figure>
+        <img src="../img/vscode-save.png" alt="Guardar archivo en VS Code" class="img-md">
+      </figure>
+
+      <h2>Métodos para guardar archivos</h2>
+      <ul>
+        <li><strong>Guardar individual:</strong> Presiona <code>Ctrl + S</code> (Windows/Linux) o <code>Cmd + S</code> (macOS) para guardar el archivo activo.</li>
+        <li><strong>Guardar todos los archivos abiertos:</strong> Presiona <code>Ctrl + K S</code> (Windows/Linux) o <code>Cmd + Option + S</code> (macOS).</li>
+        <li><strong>Usando el menú:</strong> Ve a <em>Archivo → Guardar</em> o <em>Archivo → Guardar todo</em>.</li>
+      </ul>
+
+      <h2>Guardar con nombre o en otra ubicación</h2>
+      <ul>
+        <li>Para cambiar el nombre del archivo o guardarlo en otra carpeta, usa <em>Archivo → Guardar como...</em>.</li>
+        <li>Es recomendable organizar tus archivos en carpetas dentro de tu proyecto, por ejemplo: <code>Trabajos Modulo</code>.</li>
+      </ul>
+
+      <h2>Extensiones y formato de archivo</h2>
+      <ul>
+        <li>Asegúrate de guardar tus archivos con la extensión correcta: <code>.php</code> para PHP, <code>.html</code> para HTML, <code>.css</code> para CSS.</li>
+        <li>VS Code detecta automáticamente la extensión y aplica el resaltado de sintaxis correspondiente.</li>
+      </ul>
+
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¿Qué puede hacer PHP? – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre las funcionalidades y usos de PHP" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>¿Qué puede hacer PHP?</h1>
+      <p class="lead">PHP es un lenguaje de scripting extremadamente versátil que puede realizar cualquier tarea típica de un programa CGI, además de muchas más funcionalidades avanzadas para desarrollo web y programación general.</p>
+      <br>
+      <figure>
+        <img src="../img/php2.png" alt="Descripción de la imagen" class="img-md">
+      </figure>
+      <h2>Ámbitos de uso</h2>
+      <p>PHP puede funcionar en dos contextos principales:</p>
+      <ul>
+        <li><strong>Del lado del servidor:</strong> El uso más tradicional. PHP se ejecuta en un servidor web junto con un navegador para generar contenido dinámico, manejar formularios, gestionar cookies y más.</li>
+        <li><strong>En línea de comandos:</strong> Los scripts PHP pueden ejecutarse sin servidor web, ideales para tareas programadas (cron en Unix/Linux o tareas programadas en Windows), manipulación de archivos y automatización de procesos.</li>
+      </ul>
+
+      <h2>Compatibilidad</h2>
+      <ul>
+        <li>Funciona en la mayoría de sistemas operativos: Linux, Unix, Windows, macOS, RISC OS, entre otros.</li>
+        <li>Compatible con los servidores web más populares: Apache, IIS, Nginx, Lighttpd, etc.</li>
+        <li>Puede operar como módulo del servidor o como procesador CGI.</li>
+      </ul>
+
+      <h2>Flexibilidad y estilos de programación</h2>
+      <ul>
+        <li>Soporta programación procedimental, orientada a objetos o una mezcla de ambas.</li>
+        <li>No se limita a generar HTML: puede crear PDFs, imágenes, enviar correos electrónicos, generar JSON, XML y otros textos.</li>
+        <li>Permite guardar archivos generados en el sistema de ficheros para caché del lado del servidor.</li>
+      </ul>
+
+      <h2>Soporte para bases de datos</h2>
+      <p>PHP facilita la interacción con bases de datos mediante:</p>
+      <ul>
+        <li>Extensiones específicas como MySQL.</li>
+        <li>Clases de abstracción como PDO.</li>
+        <li>Conexiones estándar ODBC o mediante sockets/cURL para otras bases de datos.</li>
+      </ul>
+
+      <h2>Protocolos y conectividad</h2>
+      <ul>
+        <li>Soporta numerosos protocolos: LDAP, IMAP, SNMP, NNTP, POP3, HTTP, COM y más.</li>
+        <li>Permite abrir sockets de red y comunicarse con otros servicios y lenguajes web (como objetos Java o WDDX).</li>
+      </ul>
+
+      <h2>Tratamiento de texto y XML</h2>
+      <ul>
+        <li>Expresiones regulares compatibles con Perl (PCRE).</li>
+        <li>Extensiones avanzadas para XML: libxml2, SimpleXML, XMLReader, XMLWriter.</li>
+        <li>Gran cantidad de extensiones para tareas especializadas y depuración (ej. XDebug).</li>
+      </ul>
+      <br>
+      <div class="alert">
+      <strong>Dato:</strong> PHP es tan potente que puede manejar prácticamente cualquier tarea de programación, desde sitios web dinámicos hasta automatización de procesos y manipulación avanzada de datos.
+      </div>
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

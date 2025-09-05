@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cómo editar código PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo editar código PHP" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Cómo editar código PHP</h1>
+      <p class="lead">Editar código PHP implica modificar los archivos que contienen scripts para que realicen tareas específicas, como generar contenido dinámico, manejar formularios o interactuar con bases de datos.</p>
+
+      <figure>
+        <img src="../img/codigo.png" alt="Editor de código PHP" class="img-lg">
+      </figure>
+
+      <h2>Herramientas para editar PHP</h2>
+      <ul>
+        <li><strong>Visual Studio Code:</strong> Popular por su ligereza y extensiones para PHP.</li>
+        <li><strong>PHPStorm:</strong> IDE completo para PHP con muchas funciones avanzadas.</li>
+        <li><strong>Sublime Text:</strong> Editor ligero y personalizable.</li>
+        <li><strong>Atom:</strong> Editor con integración para PHP y control de versiones.</li>
+        <li><strong>Notepad++:</strong> Opción simple para Windows con resaltado de sintaxis.</li>
+      </ul>
+
+      <h2>Pasos para editar código PHP</h2>
+      <ol>
+        <li>Abre tu editor de código preferido.</li>
+        <li>Navega a la carpeta donde tienes tus archivos PHP.</li>
+        <li>Selecciona el archivo que deseas modificar (por ejemplo, <code>index.php</code>).</li>
+        <li>Realiza los cambios necesarios en el código.</li>
+        <li>Guarda los cambios con <strong>Ctrl + S</strong> o mediante el menú del editor.</li>
+        <li>Si trabajas con un servidor local (MAMP, XAMPP, etc.), recarga la página en el navegador para ver los cambios.</li>
+      </ol>
+
+      <h2>Buenas prácticas al editar PHP</h2>
+      <ul>
+        <li>Realiza copias de seguridad antes de modificar archivos importantes.</li>
+        <li>Usa comentarios para explicar partes del código (<code>// comentario</code> o <code>/* comentario */</code>).</li>
+        <li>Evita modificar directamente el código de librerías externas sin necesidad.</li>
+        <li>Mantén una indentación clara y consistente para mejorar la lectura.</li>
+        <li>Prueba los cambios de forma incremental para detectar errores rápidamente.</li>
+      </ul>
+
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cómo visualizar archivos – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo visualizar archivos en tu proyecto web" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Cómo visualizar archivos</h1>
+      <p class="lead">Visualizar tus archivos te permite comprobar que tu código funciona correctamente y ver los resultados de tu proyecto web.</p>
+
+      <figure>
+        <img src="../img/carpeta.png" alt="Visualización de archivos en navegador" class="img-md">
+      </figure>
+
+      <h2>Formas de visualizar archivos</h2>
+      <ul>
+        <li><strong>Desde el explorador de archivos:</strong> Haz doble clic sobre el archivo HTML, PHP o CSS para abrirlo en tu navegador predeterminado.</li>
+        <li><strong>Desde Visual Studio Code:</strong> Usa extensiones como <em>Live Server</em> para abrir un servidor local y ver los cambios en tiempo real.</li>
+        <li><strong>En el navegador:</strong> Puedes arrastrar y soltar tu archivo HTML o abrirlo directamente desde <em>Archivo → Abrir archivo</em>.</li>
+      </ul>
+
+      <h2>Ver archivos PHP</h2>
+      <p>Los archivos PHP no se pueden abrir directamente en el navegador como HTML, ya que necesitan un servidor para procesar el código:</p>
+      <ul>
+        <li>Instala un servidor local como <strong>MAMP</strong>, <strong>XAMPP</strong> o <strong>WAMP</strong>.</li>
+        <li>Coloca tus archivos PHP dentro de la carpeta del servidor (por ejemplo, <code>htdocs</code> en XAMPP o <code>Sites</code> en MAMP).</li>
+        <li>Abre el navegador y escribe <code>http://localhost/nombre-de-tu-archivo.php</code> para ver el resultado.</li>
+      </ul>
+
+      <h2>Visualización en tiempo real</h2>
+      <ul>
+        <li>Con VS Code y <em>Live Server</em>, cada vez que guardes cambios, el navegador se actualizará automáticamente.</li>
+        <li>Esto es útil para HTML, CSS y JS, mientras que para PHP necesitarás el servidor local activo.</li>
+      </ul>
+
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

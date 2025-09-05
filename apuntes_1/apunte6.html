@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Extensión de archivos – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre la extensión de archivos en desarrollo web" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Extensión de archivos</h1>
+      <p class="lead">La extensión de un archivo indica su tipo y determina con qué programas puede abrirse o cómo debe interpretarse. Es fundamental conocerlas al desarrollar páginas web para organizar correctamente tus recursos.</p>
+
+      <figure>
+        <img src="../img/extensiones.png" alt="Ejemplo de extensiones de archivos" class="img-md">
+        <figcaption>Algunos ejemplos de extensiones de archivos comunes en desarrollo web.</figcaption>
+      </figure>
+
+      <h2>Extensiones más comunes en desarrollo web</h2>
+      <ul>
+        <li><strong>.html:</strong> Archivos de página web. Contienen la estructura y contenido de la web.</li>
+        <li><strong>.css:</strong> Archivos de estilos. Controlan la apariencia visual de la página.</li>
+        <li><strong>.js:</strong> Archivos de JavaScript. Contienen la lógica y funcionalidades interactivas.</li>
+        <li><strong>.php:</strong> Archivos de servidor. Contienen código PHP para generar contenido dinámico.</li>
+        <li><strong>.jpg / .jpeg / .png / .gif / .svg:</strong> Archivos de imágenes para la web.</li>
+        <li><strong>.ico:</strong> Iconos de la página (favicon).</li>
+        <li><strong>.json:</strong> Archivos de intercambio de datos.</li>
+      </ul>
+
+      <h2>Importancia de las extensiones</h2>
+      <ul>
+        <li>Permiten al sistema operativo reconocer el tipo de archivo.</li>
+        <li>Facilitan la correcta carga de recursos en navegadores y servidores.</li>
+        <li>Ayudan a mantener la organización y la coherencia del proyecto.</li>
+      </ul>
+
+      <h2>Recomendaciones</h2>
+      <ul>
+        <li>Mantén extensiones consistentes y claras.</li>
+        <li>No elimines ni modifiques extensiones manualmente si no sabes qué efecto tendrá.</li>
+        <li>Evita usar caracteres especiales o espacios en los nombres de archivos.</li>
+        <li>Usa extensiones apropiadas según el tipo de archivo y su función.</li>
+      </ul>
+
+      <br>
+      <div class="btn-row">
+        <a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
