@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¿Qué es PHP? – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre qué es PHP y cómo funciona" />
+  <!-- Vinculamos la hoja de estilos de apuntes -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <!-- Título principal -->
+      <h1>¿Qué es PHP?</h1>
+      <p class="lead">PHP (PHP Hypertext Preprocessor) es un lenguaje de scripts generalista y Open Source, diseñado especialmente para el desarrollo de aplicaciones web. Se integra fácilmente al HTML y se ejecuta en el servidor.</p>
+      <figure>
+        <img src="../img/php.png" alt="Descripción de la imagen" class="img-lg">
+      </figure>
+      <h2>Cómo funciona PHP</h2>
+      <p>El código PHP se incluye dentro de etiquetas <code>&lt;?php ... ?&gt;</code> en archivos HTML. Cuando un usuario solicita la página, el servidor procesa el código PHP y genera HTML que se envía al cliente. Esto significa que el usuario solo ve el resultado final y no el código PHP que lo produjo.</p>
+      <br>
+      <!-- Ejemplo de código -->
+      <h3>Ejemplo de introducción</h3>
+      <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Ejemplo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php
+  echo "Hola, soy un script PHP!";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+
+      <h2>Ventajas de PHP</h2>
+      <ul>
+        <li>Extremadamente simple para principiantes.</li>
+        <li>Permite escribir scripts dinámicos mezclando HTML y código.</li>
+        <li>El código se ejecuta en el servidor, garantizando seguridad y control sobre el contenido.</li>
+        <li>Flexible para proyectos simples o avanzados.</li>
+      </ul>
+      <br>
+      <div class="alert">
+      <strong>Dato:</strong> Puedes configurar el servidor para procesar todos los archivos HTML como PHP, haciendo que cualquier página pueda ser dinámica sin que el usuario lo note.
+      </div>
+      <br>
+      <div class="btn-row"><a href="../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
