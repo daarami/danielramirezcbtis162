@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operadores de Comparación en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre los operadores de comparación en PHP y cómo se utilizan para evaluar condiciones y expresiones." />
+  <!-- Vinculamos la hoja de estilos de apuntes -->
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <!-- Título principal -->
+      <h1>Operadores de Comparación en PHP</h1>
+      <p class="lead">Los <strong>operadores de comparación</strong> se utilizan para comparar valores y devolver un resultado booleano (<code>true</code> o <code>false</code>). Son esenciales en estructuras condicionales y bucles.</p>
+
+      <h2>Tipos de operadores de comparación</h2>
+      <p>PHP ofrece varios operadores de comparación que permiten evaluar igualdad, desigualdad, y relaciones entre valores.</p>
+
+      <h2>Ejemplos básicos</h2>
+      <pre><code>
+&lt;?php
+  $a = 5;
+  $b = 10;
+
+  var_dump($a == $b);   // false → Compara si son iguales
+  var_dump($a != $b);   // true  → Compara si son diferentes
+  var_dump($a < $b);    // true  → Compara si $a es menor que $b
+  var_dump($a >= $b);   // false → Compara si $a es mayor o igual que $b
+?&gt;
+      </code></pre>
+
+      <h2>Operadores de comparación más comunes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operador</th>
+            <th>Descripción</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>==</code></td>
+            <td>Igualdad de valores</td>
+            <td><code>$x == $y</code></td>
+          </tr>
+          <tr>
+            <td><code>===</code></td>
+            <td>Identidad (igual valor y mismo tipo)</td>
+            <td><code>$x === $y</code></td>
+          </tr>
+          <tr>
+            <td><code>!=</code></td>
+            <td>Diferencia de valores</td>
+            <td><code>$x != $y</code></td>
+          </tr>
+          <tr>
+            <td><code>!==</code></td>
+            <td>No idéntico (diferente valor o tipo)</td>
+            <td><code>$x !== $y</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;</code></td>
+            <td>Menor que</td>
+            <td><code>$x &lt; $y</code></td>
+          </tr>
+          <tr>
+            <td><code>&gt;</code></td>
+            <td>Mayor que</td>
+            <td><code>$x &gt; $y</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;=</code></td>
+            <td>Menor o igual que</td>
+            <td><code>$x &lt;= $y</code></td>
+          </tr>
+          <tr>
+            <td><code>&gt;=</code></td>
+            <td>Mayor o igual que</td>
+            <td><code>$x &gt;= $y</code></td>
+          </tr>
+          <tr>
+            <td><code><=></code></td>
+            <td>Operador combinado "spaceship" (devuelve -1,0,1)</td>
+            <td><code>$x <=> $y</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

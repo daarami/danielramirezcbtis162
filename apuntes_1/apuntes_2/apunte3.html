@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Variables en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre qué son y cómo se usan las variables en PHP" />
+  <!-- Vinculamos la hoja de estilos de apuntes -->
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <!-- Título principal -->
+      <h1>Variables en PHP</h1>
+      <p class="lead">Una variable es un espacio en memoria donde se guarda información que puede cambiar durante la ejecución de un programa. En PHP, todas las variables comienzan con el signo <code>$</code>.</p>
+
+      <h2>Reglas básicas</h2>
+      <ul>
+        <li>Deben comenzar con <code>$</code> seguido de un nombre.</li>
+        <li>El nombre puede contener letras, números y guiones bajos, pero no puede empezar con un número.</li>
+        <li>PHP distingue entre mayúsculas y minúsculas: <code>$edad</code> y <code>$Edad</code> son diferentes.</li>
+      </ul>
+
+      <h2>Ejemplo básico</h2>
+      <pre><code>
+&lt;?php
+  $nombre = "Daniel";
+  $edad = 18;
+  $activo = true;
+
+  echo "Hola, mi nombre es $nombre y tengo $edad años.";
+?&gt;
+      </code></pre>
+
+      <h2>Tipos de valores que puede guardar</h2>
+      <ul>
+        <li><strong>String</strong>: texto, se escribe entre comillas (<code>"Hola"</code> o <code>'Mundo'</code>).</li>
+        <li><strong>Integer</strong>: números enteros (<code>10</code>, <code>-5</code>).</li>
+        <li><strong>Float</strong>: números decimales (<code>3.14</code>).</li>
+        <li><strong>Boolean</strong>: valores lógicos (<code>true</code> o <code>false</code>).</li>
+        <li><strong>Array</strong>: conjunto de valores almacenados en una sola variable.</li>
+      </ul>
+
+      <h3>Ejemplo con varios tipos</h3>
+      <pre><code>
+&lt;?php
+  $precio = 25.50;
+  $disponible = false;
+  $colores = array("rojo", "verde", "azul");
+
+  echo "Precio: $precio"; // Muestra: Precio: 25.5
+?&gt;
+      </code></pre>
+
+      <h2>¿Por qué son importantes?</h2>
+      <ul>
+        <li>Permiten reutilizar valores sin escribirlos varias veces.</li>
+        <li>Hacen que el código sea más flexible y fácil de modificar.</li>
+        <li>Ayudan a organizar la información dentro de un programa.</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

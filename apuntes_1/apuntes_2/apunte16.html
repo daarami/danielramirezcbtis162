@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comentarios en PHP – Apuntes de Daniel Ramírez Valencia</title>
-  <meta name="description" content="Apunte sobre cómo se escriben y usan los comentarios en PHP" />
+  <title>Sentencia IF en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre la sentencia if en PHP, su sintaxis y ejemplos de uso." />
   <!-- Vinculamos la hoja de estilos de apuntes -->
   <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
@@ -37,43 +37,47 @@
   <main class="note-container">
     <article class="note-content">
       <!-- Título principal -->
-      <h1>Comentarios en PHP</h1>
-      <p class="lead">Los comentarios son líneas de texto dentro del código que no se ejecutan. Sirven para explicar lo que hace un programa, documentar funciones o dejar notas para otros programadores (o para ti mismo en el futuro).</p>
+      <h1>Sentencia IF en PHP</h1>
+      <p class="lead">La sentencia <strong>if</strong> permite ejecutar un bloque de código únicamente si se cumple una condición.</p>
 
-      <h2>Tipos de comentarios</h2>
-      <p>En PHP existen tres formas principales de escribir comentarios:</p>
-      <ul>
-        <li><strong>De una sola línea</strong>: se escriben con <code>//</code> o con <code>#</code>. Todo lo que esté después de estos símbolos será ignorado hasta el final de la línea.</li>
-        <li><strong>De varias líneas</strong>: se escriben entre <code>/* ... */</code>. Son útiles para explicar bloques de código o escribir documentación extensa.</li>
-      </ul>
-
-      <h3>Ejemplo básico</h3>
+      <h2>Sintaxis básica</h2>
       <pre><code>
 &lt;?php
-  // Esto es un comentario de una sola línea
-  echo "Hola mundo"; // También se puede poner al final de una instrucción
-
-  # Otra forma de comentario corto
-  $x = 10; # Esto asigna 10 a la variable $x
-
-  /* 
-     Este es un comentario
-     que ocupa varias líneas.
-     Se usa mucho para documentar funciones.
-  */
-  function suma($a, $b) {
-      return $a + $b; // Devuelve la suma
-  }
+if (condición) {
+    // Código a ejecutar si la condición es verdadera
+} 
 ?&gt;
       </code></pre>
 
-      <h2>¿Por qué usar comentarios?</h2>
-      <ul>
-        <li>Ayudan a recordar qué hace una parte del código.</li>
-        <li>Facilitan que otras personas entiendan tu trabajo.</li>
-        <li>Son útiles para “desactivar” temporalmente líneas de código durante pruebas.</li>
-      </ul>
+      <h2>Uso de ELSE</h2>
+      <p>Si la condición no se cumple, podemos usar <code>else</code> para ejecutar otro bloque:</p>
+      <pre><code>
+&lt;?php
+$edad = 17;
 
+if ($edad &gt;= 18) {
+    echo "Eres mayor de edad";
+} else {
+    echo "Eres menor de edad";
+}
+?&gt;
+      </code></pre>
+
+      <h2>Uso de ELSEIF</h2>
+      <p>Para múltiples condiciones:</p>
+      <pre><code>
+&lt;?php
+$nota = 85;
+
+if ($nota &gt;= 90) {
+    echo "Excelente";
+} elseif ($nota &gt;= 70) {
+    echo "Bueno";
+} else {
+    echo "Necesita mejorar";
+}
+?&gt;
+      </code></pre>
       <div class="btn-row">
         <a href="../../index.html" class="btn">Volver al inicio</a>
       </div>

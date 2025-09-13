@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comentarios en PHP – Apuntes de Daniel Ramírez Valencia</title>
-  <meta name="description" content="Apunte sobre cómo se escriben y usan los comentarios en PHP" />
+  <title>Operadores de Tipo en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre los operadores de tipo en PHP y cómo se utilizan para verificar o convertir tipos de datos." />
   <!-- Vinculamos la hoja de estilos de apuntes -->
   <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
@@ -37,42 +37,35 @@
   <main class="note-container">
     <article class="note-content">
       <!-- Título principal -->
-      <h1>Comentarios en PHP</h1>
-      <p class="lead">Los comentarios son líneas de texto dentro del código que no se ejecutan. Sirven para explicar lo que hace un programa, documentar funciones o dejar notas para otros programadores (o para ti mismo en el futuro).</p>
+      <h1>Operadores de Tipo en PHP</h1>
+      <p class="lead">Los operadores de tipo permiten comprobar o convertir el tipo de un valor en PHP, asegurando un manejo correcto de datos.</p>
 
-      <h2>Tipos de comentarios</h2>
-      <p>En PHP existen tres formas principales de escribir comentarios:</p>
+      <h2>Operadores principales</h2>
       <ul>
-        <li><strong>De una sola línea</strong>: se escriben con <code>//</code> o con <code>#</code>. Todo lo que esté después de estos símbolos será ignorado hasta el final de la línea.</li>
-        <li><strong>De varias líneas</strong>: se escriben entre <code>/* ... */</code>. Son útiles para explicar bloques de código o escribir documentación extensa.</li>
+        <li><code>instanceof</code> → Verifica si un objeto es una instancia de una clase determinada.</li>
+        <li><code>(int)</code>, <code>(float)</code>, <code>(string)</code>, <code>(bool)</code>, <code>(array)</code>, <code>(object)</code>, <code>(unset)</code> → Cast o conversión de tipo explícita.</li>
       </ul>
 
-      <h3>Ejemplo básico</h3>
+      <h2>Ejemplos de uso</h2>
       <pre><code>
 &lt;?php
-  // Esto es un comentario de una sola línea
-  echo "Hola mundo"; // También se puede poner al final de una instrucción
+  // Conversión de tipos
+  $num = "123";
+  $numInt = (int)$num; // convierte a entero
+  var_dump($numInt);   // int(123)
 
-  # Otra forma de comentario corto
-  $x = 10; # Esto asigna 10 a la variable $x
+  $val = 3.14;
+  $valStr = (string)$val; 
+  var_dump($valStr);   // string(4) "3.14"
 
-  /* 
-     Este es un comentario
-     que ocupa varias líneas.
-     Se usa mucho para documentar funciones.
-  */
-  function suma($a, $b) {
-      return $a + $b; // Devuelve la suma
+  // Verificación de instancia
+  class Persona {}
+  $p = new Persona();
+  if ($p instanceof Persona) {
+      echo "Es una instancia de Persona";
   }
 ?&gt;
       </code></pre>
-
-      <h2>¿Por qué usar comentarios?</h2>
-      <ul>
-        <li>Ayudan a recordar qué hace una parte del código.</li>
-        <li>Facilitan que otras personas entiendan tu trabajo.</li>
-        <li>Son útiles para “desactivar” temporalmente líneas de código durante pruebas.</li>
-      </ul>
 
       <div class="btn-row">
         <a href="../../index.html" class="btn">Volver al inicio</a>

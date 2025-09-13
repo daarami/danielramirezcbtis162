@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Precedencia de Operadores en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre la precedencia de operadores en PHP y cómo afecta a las expresiones" />
+  <!-- Vinculamos la hoja de estilos de apuntes -->
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <!-- Título principal -->
+      <h1>Precedencia de Operadores en PHP</h1>
+      <p class="lead">La <strong>precedencia de operadores</strong> indica el orden en que se evalúan los operadores dentro de una expresión. Esto es importante porque el mismo resultado puede cambiar dependiendo de cómo se evalúe.</p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>Los operadores con mayor precedencia se ejecutan primero. Cuando varios operadores tienen la misma precedencia, se evalúan de acuerdo a su <strong>asociatividad</strong> (izquierda a derecha o derecha a izquierda).</p>
+
+      <h2>Ejemplo básico</h2>
+      <pre><code>
+&lt;?php
+  echo 2 + 3 * 4; 
+  // Resultado: 14
+  // Primero se calcula 3 * 4 = 12
+  // Luego se suma 2 + 12 = 14
+
+  echo (2 + 3) * 4; 
+  // Resultado: 20
+  // Los paréntesis cambian la prioridad
+?&gt;
+      </code></pre>
+
+      <h2>Precedencia común en PHP</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operador</th>
+            <th>Descripción</th>
+            <th>Asociatividad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>()</code></td>
+            <td>Paréntesis</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><code>++ --</code></td>
+            <td>Incremento / Decremento</td>
+            <td>Derecha a izquierda</td>
+          </tr>
+          <tr>
+            <td><code>* / %</code></td>
+            <td>Multiplicación, división, módulo</td>
+            <td>Izquierda a derecha</td>
+          </tr>
+          <tr>
+            <td><code>+ -</code></td>
+            <td>Suma, resta</td>
+            <td>Izquierda a derecha</td>
+          </tr>
+          <tr>
+            <td><code>. </code></td>
+            <td>Concatenación de cadenas</td>
+            <td>Izquierda a derecha</td>
+          </tr>
+          <tr>
+            <td><code>&lt; &gt; &lt;= &gt;= == === != !==</code></td>
+            <td>Comparaciones</td>
+            <td>Izquierda a derecha</td>
+          </tr>
+          <tr>
+            <td><code>&amp;&amp;</code></td>
+            <td>AND lógico</td>
+            <td>Izquierda a derecha</td>
+          </tr>
+          <tr>
+            <td><code>||</code></td>
+            <td>OR lógico</td>
+            <td>Izquierda a derecha</td>
+          </tr>
+          <tr>
+            <td><code>= += -= *= /= .=</code></td>
+            <td>Asignación</td>
+            <td>Derecha a izquierda</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

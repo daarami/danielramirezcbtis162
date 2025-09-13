@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operadores en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre los operadores en PHP y cómo se usan" />
+  <!-- Vinculamos la hoja de estilos de apuntes -->
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <!-- Título principal -->
+      <h1>Operadores en PHP</h1>
+      <p class="lead">Los <strong>operadores</strong> son símbolos especiales que permiten realizar operaciones con variables y valores. En PHP existen varios tipos, cada uno con un propósito específico.</p>
+
+      <h2>Principales tipos de operadores</h2>
+      <ul>
+        <li><strong>Aritméticos</strong>: realizan operaciones matemáticas.</li>
+        <li><strong>De asignación</strong>: guardan valores en variables.</li>
+        <li><strong>De comparación</strong>: comparan valores y devuelven <code>true</code> o <code>false</code>.</li>
+        <li><strong>Lógicos</strong>: combinan condiciones lógicas.</li>
+        <li><strong>De concatenación</strong>: unen cadenas de texto.</li>
+      </ul>
+
+      <h2>Ejemplos básicos</h2>
+      <pre><code>
+&lt;?php
+  // Operadores aritméticos
+  $a = 10;
+  $b = 3;
+  echo $a + $b; // 13
+  echo $a % $b; // 1 (módulo)
+
+  // Operadores de asignación
+  $x = 5;
+  $x += 3; // $x ahora vale 8
+
+  // Operadores de comparación
+  var_dump($a == $b);  // false
+  var_dump($a > $b);   // true
+
+  // Operadores lógicos
+  $mayorEdad = true;
+  $tieneINE = false;
+  var_dump($mayorEdad && $tieneINE); // false
+
+  // Operador de concatenación
+  $nombre = "Daniel";
+  $saludo = "Hola " . $nombre;
+  echo $saludo; // "Hola Daniel"
+?&gt;
+      </code></pre>
+
+      <h2>Tabla de operadores más comunes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operador</th>
+            <th>Tipo</th>
+            <th>Ejemplo</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>+</code></td>
+            <td>Aritmético</td>
+            <td><code>5 + 3</code></td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td><code>==</code></td>
+            <td>Comparación</td>
+            <td><code>5 == "5"</code></td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td><code>===</code></td>
+            <td>Comparación estricta</td>
+            <td><code>5 === "5"</code></td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>&&</code></td>
+            <td>Lógico</td>
+            <td><code>true && false</code></td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>.</code></td>
+            <td>Concatenación</td>
+            <td><code>"Hola " . "Mundo"</code></td>
+            <td>Hola Mundo</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>¿Por qué son importantes?</h2>
+      <ul>
+        <li>Permiten manipular y combinar datos.</li>
+        <li>Son la base de cálculos, comparaciones y condiciones.</li>
+        <li>Se usan en prácticamente todas las expresiones en PHP.</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

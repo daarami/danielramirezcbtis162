@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comentarios en PHP – Apuntes de Daniel Ramírez Valencia</title>
-  <meta name="description" content="Apunte sobre cómo se escriben y usan los comentarios en PHP" />
+  <title>Operadores de Arrays en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre los operadores para manipulación de arrays en PHP." />
   <!-- Vinculamos la hoja de estilos de apuntes -->
   <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
@@ -37,42 +37,41 @@
   <main class="note-container">
     <article class="note-content">
       <!-- Título principal -->
-      <h1>Comentarios en PHP</h1>
-      <p class="lead">Los comentarios son líneas de texto dentro del código que no se ejecutan. Sirven para explicar lo que hace un programa, documentar funciones o dejar notas para otros programadores (o para ti mismo en el futuro).</p>
+      <h1>Operadores de Arrays en PHP</h1>
+      <p class="lead">PHP ofrece operadores especiales para comparar y combinar arrays de manera sencilla.</p>
 
-      <h2>Tipos de comentarios</h2>
-      <p>En PHP existen tres formas principales de escribir comentarios:</p>
+      <h2>Operadores principales</h2>
       <ul>
-        <li><strong>De una sola línea</strong>: se escriben con <code>//</code> o con <code>#</code>. Todo lo que esté después de estos símbolos será ignorado hasta el final de la línea.</li>
-        <li><strong>De varias líneas</strong>: se escriben entre <code>/* ... */</code>. Son útiles para explicar bloques de código o escribir documentación extensa.</li>
+        <li><code>+</code> → Unión: combina dos arrays, los valores de claves duplicadas del primer array se mantienen.</li>
+        <li><code>==</code> → Igualdad: devuelve true si los arrays tienen los mismos pares clave-valor, sin importar el orden.</li>
+        <li><code>===</code> → Identidad: devuelve true si los arrays tienen los mismos pares clave-valor en el mismo orden y del mismo tipo.</li>
+        <li><code>!=</code> o <code>&lt;&gt;</code> → Diferencia: true si los arrays no son iguales.</li>
+        <li><code>!==</code> → No idéntico: true si los arrays no son idénticos.</li>
       </ul>
 
-      <h3>Ejemplo básico</h3>
+      <h2>Ejemplos</h2>
       <pre><code>
 &lt;?php
-  // Esto es un comentario de una sola línea
-  echo "Hola mundo"; // También se puede poner al final de una instrucción
+  $a = array("a" => "rojo", "b" => "verde");
+  $b = array("c" => "azul", "b" => "verde");
 
-  # Otra forma de comentario corto
-  $x = 10; # Esto asigna 10 a la variable $x
-
-  /* 
-     Este es un comentario
-     que ocupa varias líneas.
-     Se usa mucho para documentar funciones.
+  // Unión
+  $c = $a + $b;
+  print_r($c);
+  /* Resultado:
+    Array
+    (
+      [a] => rojo
+      [b] => verde
+      [c] => azul
+    )
   */
-  function suma($a, $b) {
-      return $a + $b; // Devuelve la suma
-  }
+
+  // Comparación
+  var_dump($a == $b);  // false
+  var_dump($a === $b); // false
 ?&gt;
       </code></pre>
-
-      <h2>¿Por qué usar comentarios?</h2>
-      <ul>
-        <li>Ayudan a recordar qué hace una parte del código.</li>
-        <li>Facilitan que otras personas entiendan tu trabajo.</li>
-        <li>Son útiles para “desactivar” temporalmente líneas de código durante pruebas.</li>
-      </ul>
 
       <div class="btn-row">
         <a href="../../index.html" class="btn">Volver al inicio</a>

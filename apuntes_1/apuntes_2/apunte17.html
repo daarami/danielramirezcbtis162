@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sintaxis Alternativa de Estructuras de Control – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre la sintaxis alternativa de estructuras de control en PHP, útil para HTML y PHP mezclados." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Sintaxis Alternativa de Estructuras de Control en PHP</h1>
+      <p class="lead">La <strong>sintaxis alternativa</strong> es útil cuando mezclamos PHP y HTML, ya que reemplaza las llaves <code>{ }</code> por dos puntos <code>:</code> y palabras clave de cierre como <code>endif;</code>.</p>
+
+      <h2>Ejemplo con IF</h2>
+      <pre><code>
+&lt;?php
+$edad = 20;
+
+if ($edad &gt;= 18):
+    echo "Eres mayor de edad";
+else:
+    echo "Eres menor de edad";
+endif;
+?&gt;
+      </code></pre>
+
+      <h2>Ejemplo con ELSEIF</h2>
+      <pre><code>
+&lt;?php
+$nota = 75;
+
+if ($nota &gt;= 90):
+    echo "Excelente";
+elseif ($nota &gt;= 70):
+    echo "Bueno";
+else:
+    echo "Necesita mejorar";
+endif;
+?&gt;
+      </code></pre>
+
+      <h2>Ejemplo con FOR</h2>
+      <pre><code>
+&lt;?php
+for ($i = 1; $i &lt;= 5; $i++):
+    echo "&lt;p&gt;Número $i&lt;/p&gt;";
+endfor;
+?&gt;
+      </code></pre>
+
+      <h2>Ejemplo con FOREACH</h2>
+      <pre><code>
+&lt;?php
+$frutas = ["Manzana", "Banana", "Cereza"];
+
+foreach ($frutas as $fruta):
+    echo "&lt;p&gt;$fruta&lt;/p&gt;";
+endforeach;
+?&gt;
+      </code></pre>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

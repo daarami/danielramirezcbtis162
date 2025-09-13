@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operadores Aritméticos en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de operadores aritméticos en PHP con ejemplos prácticos" />
+  <!-- Vinculamos la hoja de estilos de apuntes -->
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <!-- Título principal -->
+      <h1>Operadores Aritméticos en PHP</h1>
+      <p class="lead">Los <strong>operadores aritméticos</strong> permiten realizar operaciones matemáticas básicas en PHP, como suma, resta, multiplicación y división. Son fundamentales para trabajar con números dentro de programas.</p>
+
+      <h2>Lista de operadores</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Operador</th>
+              <th>Descripción</th>
+              <th>Ejemplo</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>+</code></td>
+              <td>Suma</td>
+              <td><code>5 + 3</code></td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><code>-</code></td>
+              <td>Resta</td>
+              <td><code>10 - 4</code></td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td><code>*</code></td>
+              <td>Multiplicación</td>
+              <td><code>6 * 2</code></td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td><code>/</code></td>
+              <td>División</td>
+              <td><code>15 / 3</code></td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td><code>%</code></td>
+              <td>Módulo (resto de la división)</td>
+              <td><code>10 % 3</code></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><code>**</code></td>
+              <td>Exponenciación</td>
+              <td><code>2 ** 4</code></td>
+              <td>16</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Ejemplo en PHP</h2>
+      <pre><code>
+&lt;?php
+  $a = 10;
+  $b = 3;
+
+  echo $a + $b; // 13
+  echo $a - $b; // 7
+  echo $a * $b; // 30
+  echo $a / $b; // 3.333...
+  echo $a % $b; // 1
+  echo $a ** $b; // 1000
+?&gt;
+      </code></pre>
+
+      <h2>Tips importantes</h2>
+      <ul>
+        <li>La división entre enteros puede dar como resultado un número decimal.</li>
+        <li>El operador módulo <code>%</code> es muy útil para saber si un número es par o impar.</li>
+        <li>PHP también soporta la <code>exponenciación (**)</code>, que no existe en muchos otros lenguajes.</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comentarios en PHP – Apuntes de Daniel Ramírez Valencia</title>
-  <meta name="description" content="Apunte sobre cómo se escriben y usan los comentarios en PHP" />
+  <title>Expresiones en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre qué son y cómo funcionan las expresiones en PHP" />
   <!-- Vinculamos la hoja de estilos de apuntes -->
   <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
@@ -37,41 +37,55 @@
   <main class="note-container">
     <article class="note-content">
       <!-- Título principal -->
-      <h1>Comentarios en PHP</h1>
-      <p class="lead">Los comentarios son líneas de texto dentro del código que no se ejecutan. Sirven para explicar lo que hace un programa, documentar funciones o dejar notas para otros programadores (o para ti mismo en el futuro).</p>
+      <h1>Expresiones en PHP</h1>
+      <p class="lead">Una <strong>expresión</strong> en PHP es cualquier combinación de valores, variables y operadores que produce un resultado. Son la base de las instrucciones en un programa.</p>
 
-      <h2>Tipos de comentarios</h2>
-      <p>En PHP existen tres formas principales de escribir comentarios:</p>
+      <h2>Tipos de expresiones</h2>
       <ul>
-        <li><strong>De una sola línea</strong>: se escriben con <code>//</code> o con <code>#</code>. Todo lo que esté después de estos símbolos será ignorado hasta el final de la línea.</li>
-        <li><strong>De varias líneas</strong>: se escriben entre <code>/* ... */</code>. Son útiles para explicar bloques de código o escribir documentación extensa.</li>
+        <li><strong>Numéricas</strong>: combinan números y operadores aritméticos.</li>
+        <li><strong>De cadena</strong>: trabajan con texto y operadores como la concatenación.</li>
+        <li><strong>Lógicas</strong>: devuelven un valor verdadero (<code>true</code>) o falso (<code>false</code>).</li>
+        <li><strong>De asignación</strong>: guardan valores en variables.</li>
       </ul>
 
-      <h3>Ejemplo básico</h3>
+      <h2>Ejemplos básicos</h2>
       <pre><code>
 &lt;?php
-  // Esto es un comentario de una sola línea
-  echo "Hola mundo"; // También se puede poner al final de una instrucción
+  // Expresión numérica
+  $suma = 5 + 3;   // Resultado: 8
 
-  # Otra forma de comentario corto
-  $x = 10; # Esto asigna 10 a la variable $x
+  // Expresión de cadena
+  $nombre = "Daniel";
+  $mensaje = "Hola " . $nombre;  // "Hola Daniel"
 
-  /* 
-     Este es un comentario
-     que ocupa varias líneas.
-     Se usa mucho para documentar funciones.
-  */
-  function suma($a, $b) {
-      return $a + $b; // Devuelve la suma
+  // Expresión lógica
+  $edad = 18;
+  $esMayor = ($edad >= 18); // true
+
+  // Expresión de asignación
+  $x = 10;  // Asigna el valor 10 a la variable $x
+?&gt;
+      </code></pre>
+
+      <h2>Expresiones en condiciones</h2>
+      <p>Muchas veces las expresiones se usan en estructuras como <code>if</code>, donde el programa decide qué hacer en base a su resultado:</p>
+      <pre><code>
+&lt;?php
+  $calificacion = 85;
+
+  if ($calificacion >= 70) {
+      echo "Aprobado";
+  } else {
+      echo "Reprobado";
   }
 ?&gt;
       </code></pre>
 
-      <h2>¿Por qué usar comentarios?</h2>
+      <h2>¿Por qué son importantes?</h2>
       <ul>
-        <li>Ayudan a recordar qué hace una parte del código.</li>
-        <li>Facilitan que otras personas entiendan tu trabajo.</li>
-        <li>Son útiles para “desactivar” temporalmente líneas de código durante pruebas.</li>
+        <li>Son la unidad básica de trabajo en cualquier lenguaje de programación.</li>
+        <li>Permiten calcular resultados a partir de datos.</li>
+        <li>Se combinan con variables, operadores y funciones para construir programas completos.</li>
       </ul>
 
       <div class="btn-row">

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comentarios en PHP – Apuntes de Daniel Ramírez Valencia</title>
-  <meta name="description" content="Apunte sobre cómo se escriben y usan los comentarios en PHP" />
+  <title>Estructuras de Control en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre las estructuras de control en PHP, incluyendo condicionales y bucles." />
   <!-- Vinculamos la hoja de estilos de apuntes -->
   <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
@@ -37,43 +37,66 @@
   <main class="note-container">
     <article class="note-content">
       <!-- Título principal -->
-      <h1>Comentarios en PHP</h1>
-      <p class="lead">Los comentarios son líneas de texto dentro del código que no se ejecutan. Sirven para explicar lo que hace un programa, documentar funciones o dejar notas para otros programadores (o para ti mismo en el futuro).</p>
+      <h1>Estructuras de Control en PHP</h1>
+      <p class="lead">Las <strong>estructuras de control</strong> permiten modificar el flujo de ejecución de un programa según condiciones o repeticiones.</p>
 
-      <h2>Tipos de comentarios</h2>
-      <p>En PHP existen tres formas principales de escribir comentarios:</p>
-      <ul>
-        <li><strong>De una sola línea</strong>: se escriben con <code>//</code> o con <code>#</code>. Todo lo que esté después de estos símbolos será ignorado hasta el final de la línea.</li>
-        <li><strong>De varias líneas</strong>: se escriben entre <code>/* ... */</code>. Son útiles para explicar bloques de código o escribir documentación extensa.</li>
-      </ul>
-
-      <h3>Ejemplo básico</h3>
+      <h2>Condicionales</h2>
+      <p>Se utilizan para ejecutar código solo si se cumple una condición:</p>
       <pre><code>
 &lt;?php
-  // Esto es un comentario de una sola línea
-  echo "Hola mundo"; // También se puede poner al final de una instrucción
+  $edad = 18;
 
-  # Otra forma de comentario corto
-  $x = 10; # Esto asigna 10 a la variable $x
+  if ($edad &gt;= 18) {
+      echo "Eres mayor de edad";
+  } else {
+      echo "Eres menor de edad";
+  }
 
-  /* 
-     Este es un comentario
-     que ocupa varias líneas.
-     Se usa mucho para documentar funciones.
-  */
-  function suma($a, $b) {
-      return $a + $b; // Devuelve la suma
+  // switch
+  $dia = "Lunes";
+  switch ($dia) {
+      case "Lunes":
+          echo "Comienza la semana";
+          break;
+      case "Viernes":
+          echo "Último día laboral";
+          break;
+      default:
+          echo "Día normal";
   }
 ?&gt;
       </code></pre>
 
-      <h2>¿Por qué usar comentarios?</h2>
-      <ul>
-        <li>Ayudan a recordar qué hace una parte del código.</li>
-        <li>Facilitan que otras personas entiendan tu trabajo.</li>
-        <li>Son útiles para “desactivar” temporalmente líneas de código durante pruebas.</li>
-      </ul>
+      <h2>Bucles</h2>
+      <p>Permiten repetir código mientras se cumpla una condición o un número determinado de veces:</p>
+      <pre><code>
+&lt;?php
+  // while
+  $i = 1;
+  while ($i &lt;= 5) {
+      echo $i;
+      $i++;
+  }
 
+  // do...while
+  $j = 1;
+  do {
+      echo $j;
+      $j++;
+  } while ($j &lt;= 5);
+
+  // for
+  for ($k = 1; $k &lt;= 5; $k++) {
+      echo $k;
+  }
+
+  // foreach (para arrays)
+  $frutas = ["Manzana", "Banana", "Cereza"];
+  foreach ($frutas as $fruta) {
+      echo $fruta;
+  }
+?&gt;
+      </code></pre>
       <div class="btn-row">
         <a href="../../index.html" class="btn">Volver al inicio</a>
       </div>

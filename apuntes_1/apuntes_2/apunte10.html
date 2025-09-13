@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operadores de Incremento y Decremento en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre los operadores de incremento y decremento en PHP y cómo se utilizan para modificar valores." />
+  <!-- Vinculamos la hoja de estilos de apuntes -->
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <!-- Título principal -->
+      <h1>Operadores de Incremento y Decremento en PHP</h1>
+      <p class="lead">Los <strong>operadores de incremento y decremento</strong> permiten aumentar o disminuir el valor de una variable en 1. Son muy útiles para bucles y contadores.</p>
+
+      <h2>Tipos de operadores</h2>
+      <p>Existen dos formas de utilizarlos: <strong>prefijo</strong> y <strong>postfijo</strong>, lo que afecta el momento en que se modifica el valor.</p>
+
+      <h2>Ejemplos básicos</h2>
+      <pre><code>
+&lt;?php
+  $x = 5;
+
+  // Incremento
+  echo ++$x; // prefijo: primero aumenta, luego imprime → 6
+  echo $x++; // postfijo: primero imprime, luego aumenta → 6
+  echo $x;   // 7 (después de la operación postfija)
+
+  // Decremento
+  echo --$x; // prefijo: primero disminuye, luego imprime → 6
+  echo $x--; // postfijo: primero imprime, luego disminuye → 6
+  echo $x;   // 5
+?&gt;
+      </code></pre>
+
+      <h2>Tabla de operadores</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operador</th>
+            <th>Descripción</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>++$x</code></td>
+            <td>Incremento prefijo (suma 1 antes de usar el valor)</td>
+            <td><code>$x = 5; echo ++$x; // 6</code></td>
+          </tr>
+          <tr>
+            <td><code>$x++</code></td>
+            <td>Incremento postfijo (suma 1 después de usar el valor)</td>
+            <td><code>$x = 5; echo $x++; // 5</code></td>
+          </tr>
+          <tr>
+            <td><code>--$x</code></td>
+            <td>Decremento prefijo (resta 1 antes de usar el valor)</td>
+            <td><code>$x = 5; echo --$x; // 4</code></td>
+          </tr>
+          <tr>
+            <td><code>$x--</code></td>
+            <td>Decremento postfijo (resta 1 después de usar el valor)</td>
+            <td><code>$x = 5; echo $x--; // 5</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

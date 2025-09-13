@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operadores de Asignación en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre los operadores de asignación en PHP con ejemplos prácticos y su uso en variables." />
+  <!-- Vinculamos la hoja de estilos de apuntes -->
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <!-- Título principal -->
+      <h1>Operadores de Asignación en PHP</h1>
+      <p class="lead">Los <strong>operadores de asignación</strong> en PHP permiten dar un valor a una variable y, en muchos casos, combinarlo con alguna operación aritmética o lógica. Son muy utilizados en cálculos y manipulación de datos.</p>
+
+      <h2>¿Cómo funcionan?</h2>
+      <p>El operador de asignación básico es <code>=</code>, que guarda un valor en una variable. Los demás operadores combinan la asignación con una operación, lo que permite simplificar el código.</p>
+
+      <h2>Ejemplo básico</h2>
+      <pre><code>
+&lt;?php
+  $x = 10;   // Asigna el valor 10 a la variable $x
+  $x += 5;   // Equivale a $x = $x + 5 → $x ahora vale 15
+  $x *= 2;   // Equivale a $x = $x * 2 → $x ahora vale 30
+  echo $x;   // Resultado: 30
+?&gt;
+      </code></pre>
+
+      <h2>Operadores de asignación más comunes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operador</th>
+            <th>Ejemplo</th>
+            <th>Equivalente a</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>=</code></td>
+            <td><code>$x = 5</code></td>
+            <td>Asigna el valor 5 a <code>$x</code></td>
+          </tr>
+          <tr>
+            <td><code>+=</code></td>
+            <td><code>$x += 3</code></td>
+            <td><code>$x = $x + 3</code></td>
+          </tr>
+          <tr>
+            <td><code>-=</code></td>
+            <td><code>$x -= 2</code></td>
+            <td><code>$x = $x - 2</code></td>
+          </tr>
+          <tr>
+            <td><code>*=</code></td>
+            <td><code>$x *= 4</code></td>
+            <td><code>$x = $x * 4</code></td>
+          </tr>
+          <tr>
+            <td><code>/=</code></td>
+            <td><code>$x /= 2</code></td>
+            <td><code>$x = $x / 2</code></td>
+          </tr>
+          <tr>
+            <td><code>%=</code></td>
+            <td><code>$x %= 3</code></td>
+            <td><code>$x = $x % 3</code></td>
+          </tr>
+          <tr>
+            <td><code>.=</code></td>
+            <td><code>$txt .= " mundo"</code></td>
+            <td>Concatena el texto → <code>$txt = $txt . " mundo"</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
