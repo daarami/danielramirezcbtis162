@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suma de Matrices en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo se realiza la suma de matrices en PHP usando ciclos anidados." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Suma de Matrices en PHP</h1>
+      <p class="lead">La suma de matrices consiste en <strong>sumar elemento por elemento</strong> en la misma posición de dos tablas (o arreglos) del mismo tamaño.</p>
+
+      <h2>Cómo funciona el algoritmo</h2>
+      <ul>
+        <li>Se crean dos matrices con los mismos números de filas y columnas.</li>
+        <li>Se recorre cada posición con <code>for</code> anidados.</li>
+        <li>En cada posición <code>[i][j]</code>, se suman los valores de ambas matrices.</li>
+        <li>El resultado se guarda en una nueva matriz.</li>
+      </ul>
+
+      <h2>Ejemplo en código</h2>
+      <pre><code>
+&lt;?php
+$t1 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+$t2 = [
+  [9, 8, 7],
+  [6, 5, 4],
+  [3, 2, 1]
+];
+
+$resultado = [];
+
+for ($i = 0; $i &lt; 3; $i++) {
+  for ($j = 0; $j &lt; 3; $j++) {
+    $resultado[$i][$j] = $t1[$i][$j] + $t2[$i][$j];
+  }
+}
+
+print_r($resultado);
+?&gt;
+      </code></pre>
+
+      <h2>Salida esperada</h2>
+      <pre><code>
+Array
+(
+    [0] =&gt; Array ( [0] =&gt; 10 [1] =&gt; 10 [2] =&gt; 10 )
+    [1] =&gt; Array ( [0] =&gt; 10 [1] =&gt; 10 [2] =&gt; 10 )
+    [2] =&gt; Array ( [0] =&gt; 10 [1] =&gt; 10 [2] =&gt; 10 )
+)
+      </code></pre>
+
+      <h2>En resumen</h2>
+      <p>La clave está en recorrer las posiciones con <code>for</code> anidados y sumar directamente los elementos en la misma posición de cada matriz.</p>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

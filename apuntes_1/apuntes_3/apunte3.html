@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multiplicación de Matrices en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo multiplicar matrices en PHP con ciclos anidados." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Multiplicación de Matrices en PHP</h1>
+      <p class="lead">La multiplicación de matrices es una operación fundamental en programación. Para calcular la matriz resultado, se multiplica cada fila de la primera matriz por cada columna de la segunda.</p>
+
+      <h2>Ejemplo de matrices</h2>
+      <p>Supongamos que tenemos una matriz A de tamaño <code>2x3</code> y una matriz B de tamaño <code>3x3</code>. El resultado será una matriz C de tamaño <code>2x3</code>.</p>
+
+      <h2>Código en PHP</h2>
+      <pre><code>
+&lt;?php
+if (isset($_POST['multiplicar'])) {
+    $a = $_POST['a']; // Matriz A (2x3)
+    $b = $_POST['b']; // Matriz B (3x3)
+    $c = array();
+
+    for ($i = 0; $i &lt; 2; $i++) {        // filas de A
+        for ($j = 0; $j &lt; 3; $j++) {    // columnas de B
+            $c[$i][$j] = 0;
+            for ($z = 0; $z &lt; 3; $z++) { // recorrido común
+                $c[$i][$j] += $a[$i][$z] * $b[$z][$j];
+            }
+        }
+    }
+
+    // Imprimir la matriz resultado
+    echo "&lt;h2&gt;Matriz C (Resultado 2x3)&lt;/h2&gt;";
+    echo "&lt;table border='1' cellpadding='10'&gt;";
+    for ($i = 0; $i &lt; 2; $i++) {
+        echo "&lt;tr&gt;";
+        for ($j = 0; $j &lt; 3; $j++) {
+            echo "&lt;td&gt;" . $c[$i][$j] . "&lt;/td&gt;";
+        }
+        echo "&lt;/tr&gt;";
+    }
+    echo "&lt;/table&gt;";
+}
+?&gt;
+      </code></pre>
+
+      <h2>Explicación del algoritmo</h2>
+      <ul>
+        <li>Se utilizan **tres ciclos anidados**: uno para recorrer filas, otro para columnas y otro para hacer las multiplicaciones parciales.</li>
+        <li>Cada posición <code>C[i][j]</code> se calcula multiplicando los elementos de la fila <code>i</code> de A por la columna <code>j</code> de B.</li>
+        <li>El resultado final es otra matriz cuyos valores dependen de todas las combinaciones de filas y columnas.</li>
+      </ul>
+
+      <h2>Ejemplo de salida</h2>
+      <p>Si se ingresan los valores adecuados, la salida será algo como:</p>
+      <pre><code>
+Matriz C (Resultado 2x3)
+[ [58,  64,  69],
+  [139, 154, 169] ]
+      </code></pre>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
