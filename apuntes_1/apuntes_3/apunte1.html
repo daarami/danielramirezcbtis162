@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ordenar un Arreglo Bidimensional en PHP – Apuntes de Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre cómo ordenar un arreglo bidimensional en PHP con ciclos y comparaciones." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Ordenar un Arreglo Bidimensional en PHP</h1>
+      <p class="lead">Un arreglo bidimensional es como una <strong>tabla</strong> con filas y columnas. Para ordenarlo, podemos aplicar algoritmos de ordenamiento sobre una de sus columnas.</p>
+
+      <h2>Ejemplo de un arreglo bidimensional</h2>
+      <pre><code>
+&lt;?php
+$alumnos = [
+    ["nombre" =&gt; "Ana", "edad" =&gt; 20],
+    ["nombre" =&gt; "Luis", "edad" =&gt; 18],
+    ["nombre" =&gt; "María", "edad" =&gt; 22],
+    ["nombre" =&gt; "Pedro", "edad" =&gt; 19]
+];
+?&gt;
+      </code></pre>
+
+      <h2>Ordenando por una columna (ejemplo: edad)</h2>
+      <p>Podemos usar el mismo algoritmo de selección que vimos con arreglos simples, pero comparando un campo en particular.</p>
+
+      <pre><code>
+&lt;?php
+$n = count($alumnos);
+
+for ($i = 0; $i &lt; $n - 1; $i++) {
+    $min = $i;
+
+    for ($j = $i + 1; $j &lt; $n; $j++) {
+        if ($alumnos[$j]["edad"] &lt; $alumnos[$min]["edad"]) {
+            $min = $j;
+        }
+    }
+
+    // Intercambiar filas completas
+    $temp = $alumnos[$i];
+    $alumnos[$i] = $alumnos[$min];
+    $alumnos[$min] = $temp;
+}
+
+print_r($alumnos);
+?&gt;
+      </code></pre>
+
+      <h2>Salida esperada</h2>
+      <p>El arreglo se ordena por edad ascendente:</p>
+      <pre><code>
+Array
+(
+    [0] =&gt; Array ( [nombre] =&gt; Luis [edad] =&gt; 18 )
+    [1] =&gt; Array ( [nombre] =&gt; Pedro [edad] =&gt; 19 )
+    [2] =&gt; Array ( [nombre] =&gt; Ana  [edad] =&gt; 20 )
+    [3] =&gt; Array ( [nombre] =&gt; María [edad] =&gt; 22 )
+)
+      </code></pre>
+
+      <h2>Notas</h2>
+      <ul>
+        <li>Este método se puede aplicar para cualquier columna del arreglo.</li>
+        <li>En lugar de ciclos, también podrías usar la función <code>usort()</code> de PHP.</li>
+        <li>La idea es la misma: recorrer el arreglo y comparar un campo específico.</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
