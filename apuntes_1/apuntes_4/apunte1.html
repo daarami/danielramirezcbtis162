@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sentencia while – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de la sentencia while en PHP con ejemplos y explicación de su funcionamiento." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Sentencia <code>while</code> en PHP</h1>
+      <p class="lead">La sentencia <code>while</code> permite ejecutar un bloque de código repetidamente mientras una condición sea verdadera.</p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>Primero se evalúa una condición. Si el resultado es <strong>true</strong>, se ejecutan las instrucciones dentro del ciclo. Cuando la condición deja de cumplirse, el bucle termina.</p>
+
+      <blockquote>
+        <strong>Importante:</strong> Si la condición nunca cambia a falsa, el ciclo será infinito.
+      </blockquote>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>while (condición) {
+  // código a ejecutar mientras la condición sea verdadera
+}</code></pre>
+
+      <h2>Ejemplo práctico</h2>
+      <p>El siguiente ejemplo muestra cómo imprimir los números del 1 al 5 utilizando <code>while</code>:</p>
+
+      <pre><code>&lt;?php
+$numero = 1;
+
+while ($numero &lt;= 5) {
+  echo "Número: $numero &lt;br&gt;";
+  $numero++; // aumenta el valor para evitar un bucle infinito
+}
+?&gt;</code></pre>
+
+      <h3>Explicación paso a paso:</h3>
+      <ul>
+        <li>Se inicia la variable <code>$numero</code> con el valor <code>1</code>.</li>
+        <li>El <code>while</code> verifica si <code>$numero &lt;= 5</code>.</li>
+        <li>Si la condición es verdadera, se ejecuta el bloque y se imprime el número.</li>
+        <li>Luego se incrementa <code>$numero</code> con <code>$numero++</code>.</li>
+        <li>Cuando <code>$numero</code> llega a 6, la condición ya no se cumple y el ciclo termina.</li>
+      </ul>
+
+      <h2>Salida esperada:</h2>
+      <div class="card">
+        <code>
+          Número: 1<br>
+          Número: 2<br>
+          Número: 3<br>
+          Número: 4<br>
+          Número: 5
+        </code>
+      </div>
+
+      <h2>Otro ejemplo: contador regresivo</h2>
+      <pre><code>&lt;?php
+$contador = 5;
+
+while ($contador &gt;= 1) {
+  echo "Cuenta atrás: $contador &lt;br&gt;";
+  $contador--;
+}
+?&gt;</code></pre>
+
+      <p>Este código imprime una cuenta regresiva desde 5 hasta 1, restando 1 en cada repetición.</p>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
