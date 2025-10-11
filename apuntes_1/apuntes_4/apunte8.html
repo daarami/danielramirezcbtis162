@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sentencia isset() – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de la sentencia isset() en PHP con ejemplos, explicación y salida esperada." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Sentencia <code>isset()</code> en PHP</h1>
+      <p class="lead">
+        <code>isset()</code> es una función que permite verificar si una variable está definida y no es <code>null</code>. Es útil para validar datos antes de usarlos.
+      </p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        La función devuelve <code>true</code> si la variable existe y tiene un valor diferente de <code>null</code>, y <code>false</code> en caso contrario.
+      </p>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>isset($variable);</code></pre>
+
+      <h2>Ejemplo práctico: Verificar una variable</h2>
+      <pre><code>&lt;?php
+$nombre = "Daniel";
+
+if(isset($nombre)) {
+  echo "La variable \$nombre está definida.";
+} else {
+  echo "La variable \$nombre no está definida.";
+}
+?&gt;</code></pre>
+
+      <h3>Salida esperada:</h3>
+      <div class="card">
+        <code>
+          La variable $nombre está definida.
+        </code>
+      </div>
+
+      <h2>Ejemplo práctico con formularios</h2>
+      <p>Validando datos enviados por <code>GET</code>:</p>
+      <pre><code>&lt;?php
+if(isset($_GET['edad'])) {
+  echo "Edad recibida: " . $_GET['edad'];
+} else {
+  echo "No se recibió edad.";
+}
+?&gt;</code></pre>
+
+      <h3>Salida esperada (si se envía edad=17):</h3>
+      <div class="card">
+        <code>
+          Edad recibida: 17
+        </code>
+      </div>
+
+      <h2>Consideraciones importantes</h2>
+      <ul>
+        <li>No genera error si la variable no existe, a diferencia de acceder directamente a la variable.</li>
+        <li>Se puede usar con múltiples variables: <code>isset($a, $b, $c)</code> devuelve <code>true</code> solo si todas existen y no son <code>null</code>.</li>
+        <li>Es común usar <code>isset()</code> junto con <code>$_GET</code> o <code>$_POST</code> para validar entradas antes de procesarlas.</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

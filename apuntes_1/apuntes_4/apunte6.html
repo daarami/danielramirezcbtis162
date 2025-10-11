@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sentencia $_POST – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de la sentencia $_POST en PHP con ejemplos, explicación y salida esperada." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Sentencia <code>$_POST</code> en PHP</h1>
+      <p class="lead">
+        La sentencia <code>$_POST</code> es una variable superglobal que permite recibir datos enviados desde un formulario HTML mediante el método <code>POST</code>.
+      </p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        Cuando un formulario envía datos usando <code>method="post"</code>, PHP los captura en <code>$_POST</code> como un array asociativo. La clave es el atributo <code>name</code> del campo, y el valor es lo que el usuario escribió.
+      </p>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>&lt;?php
+$valor = $_POST['nombre_del_campo'];
+?&gt;</code></pre>
+
+      <h2>Ejemplo práctico: Formulario</h2>
+      <p>Formulario HTML que envía nombre y edad:</p>
+      <pre><code>&lt;form action="procesar.php" method="post"&gt;
+  Nombre: &lt;input type="text" name="nombre"&gt;&lt;br&gt;
+  Edad: &lt;input type="number" name="edad"&gt;&lt;br&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+
+      <h2>Procesando los datos</h2>
+      <pre><code>&lt;?php
+// procesar.php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $edad = $_POST['edad'];
+    echo "Hola, $nombre. Tienes $edad años.";
+}
+?&gt;</code></pre>
+
+      <h3>Explicación paso a paso:</h3>
+      <ul>
+        <li>Se verifica que el formulario se envió mediante POST.</li>
+        <li>Se asigna cada valor del formulario a variables PHP usando <code>$_POST['campo']</code>.</li>
+        <li>Se puede procesar o mostrar la información según sea necesario.</li>
+      </ul>
+
+      <h2>Salida esperada (si el usuario escribe “Daniel” y “17”):</h2>
+      <div class="card">
+        <code>
+          Hola, Daniel. Tienes 17 años.
+        </code>
+      </div>
+
+      <h2>Consideraciones importantes</h2>
+      <ul>
+        <li>Los datos enviados por POST no aparecen en la URL.</li>
+        <li>Siempre validar y sanear la información antes de usarla.</li>
+        <li>Ideal para datos sensibles como contraseñas o información privada.</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

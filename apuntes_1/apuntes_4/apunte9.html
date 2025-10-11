@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sentencia PDO – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de PDO en PHP con ejemplos, explicación y salida esperada." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Sentencia <code>PDO</code> en PHP</h1>
+      <p class="lead">
+        <code>PDO</code> (PHP Data Objects) es una interfaz que permite conectarse y trabajar con bases de datos de manera segura y uniforme, independientemente del motor de base de datos que se use.
+      </p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        PDO permite conectarse a una base de datos, ejecutar consultas y manejar resultados. Además, ofrece soporte para sentencias preparadas, lo que previene ataques de inyección SQL.
+      </p>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>$pdo = new PDO("mysql:host=localhost;dbname=nombreBD", "usuario", "contraseña");</code></pre>
+
+      <h2>Ejemplo práctico: Conexión a MySQL</h2>
+      <pre><code>&lt;?php
+try {
+  $pdo = new PDO("mysql:host=localhost;dbname=miBD", "root", "");
+  $pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Conexión exitosa";
+} catch(PDOException $e) {
+  echo "Error de conexión: " . $e-&gt;getMessage();
+}
+?&gt;</code></pre>
+
+      <h3>Salida esperada (si la conexión es correcta):</h3>
+      <div class="card">
+        <code>
+          Conexión exitosa
+        </code>
+      </div>
+
+      <h2>Ejemplo práctico: Consulta con PDO</h2>
+      <p>Obtener datos de una tabla llamada <code>usuarios</code>:</p>
+      <pre><code>&lt;?php
+$consulta = $pdo-&gt;query("SELECT nombre, email FROM usuarios");
+
+while($fila = $consulta-&gt;fetch(PDO::FETCH_ASSOC)) {
+  echo "Nombre: " . $fila['nombre'] . " - Email: " . $fila['email'] . "&lt;br&gt;";
+}
+?&gt;</code></pre>
+
+      <h3>Explicación paso a paso:</h3>
+      <ul>
+        <li><code>$pdo-&gt;query()</code> ejecuta la consulta SQL.</li>
+        <li><code>fetch(PDO::FETCH_ASSOC)</code> obtiene cada fila como un arreglo asociativo.</li>
+        <li>El ciclo <code>while</code> recorre todas las filas y las muestra.</li>
+      </ul>
+
+      <h2>Ejemplo práctico: Sentencias preparadas</h2>
+      <p>Insertar datos de manera segura:</p>
+      <pre><code>&lt;?php
+$sentencia = $pdo-&gt;prepare("INSERT INTO usuarios (nombre, email) VALUES (:nombre, :email)");
+$sentencia-&gt;execute([
+  ':nombre' =&gt; 'Daniel',
+  ':email' =&gt; 'daniel@mail.com'
+]);
+echo "Usuario insertado correctamente";
+?&gt;</code></pre>
+
+      <h3>Consideraciones importantes</h3>
+      <ul>
+        <li>Siempre usar sentencias preparadas para prevenir inyección SQL.</li>
+        <li>Pueden usarse con diferentes motores de base de datos (MySQL, SQLite, PostgreSQL, etc.).</li>
+        <li>El manejo de errores se realiza con excepciones usando <code>try/catch</code>.</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

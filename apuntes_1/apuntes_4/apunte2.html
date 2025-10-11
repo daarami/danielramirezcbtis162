@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sentencia do...while – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de la sentencia do...while en PHP con ejemplos, explicación y salida esperada." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Sentencia <code>do...while</code> en PHP</h1>
+      <p class="lead">
+        El ciclo <code>do...while</code> ejecuta un bloque de código al menos una vez, y luego repite la ejecución mientras la condición siga siendo verdadera.
+      </p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        A diferencia del <code>while</code>, el ciclo <code>do...while</code> evalúa la condición <strong>al final</strong> de cada iteración.  
+        Esto significa que el bloque se ejecuta al menos una vez, aunque la condición sea falsa desde el inicio.
+      </p>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>do {
+  // código a ejecutar
+} while (condición);</code></pre>
+
+      <h2>Ejemplo práctico</h2>
+      <p>El siguiente ejemplo imprime los números del 1 al 5 utilizando <code>do...while</code>:</p>
+
+      <pre><code>&lt;?php
+$numero = 1;
+
+do {
+  echo "Número: $numero &lt;br&gt;";
+  $numero++;
+} while ($numero &lt;= 5);
+?&gt;</code></pre>
+
+      <h3>Explicación paso a paso:</h3>
+      <ul>
+        <li>Se inicia <code>$numero</code> con el valor <code>1</code>.</li>
+        <li>El bloque dentro del <code>do</code> se ejecuta inmediatamente.</li>
+        <li>Luego se evalúa la condición <code>$numero &lt;= 5</code>.</li>
+        <li>Si es verdadera, se repite el ciclo. Si no, termina.</li>
+      </ul>
+
+      <h2>Salida esperada:</h2>
+      <div class="card">
+        <code>
+          Número: 1<br>
+          Número: 2<br>
+          Número: 3<br>
+          Número: 4<br>
+          Número: 5
+        </code>
+      </div>
+
+      <h2>Ejemplo 2: condición falsa desde el inicio</h2>
+      <p>
+        Aquí se puede ver cómo el <code>do...while</code> ejecuta el bloque una vez, incluso si la condición no se cumple.
+      </p>
+
+      <pre><code>&lt;?php
+$numero = 10;
+
+do {
+  echo "Número: $numero &lt;br&gt;";
+  $numero++;
+} while ($numero &lt;= 5);
+?&gt;</code></pre>
+
+      <p>
+        En este caso, aunque la condición es falsa (<code>10 &lt;= 5</code>), el mensaje se imprime una vez antes de que termine el ciclo.
+      </p>
+
+      <h2>Comparación rápida</h2>
+      <table>
+        <tr>
+          <th>Ciclo</th>
+          <th>Evalúa la condición</th>
+          <th>Se ejecuta al menos una vez</th>
+        </tr>
+        <tr>
+          <td><code>while</code></td>
+          <td>Antes del bloque</td>
+          <td>No siempre</td>
+        </tr>
+        <tr>
+          <td><code>do...while</code></td>
+          <td>Después del bloque</td>
+          <td>Sí, siempre</td>
+        </tr>
+      </table>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

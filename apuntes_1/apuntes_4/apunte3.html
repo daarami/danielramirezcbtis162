@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sentencia for – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de la sentencia for en PHP con ejemplos, explicación y salida esperada." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Sentencia <code>for</code> en PHP</h1>
+      <p class="lead">
+        La sentencia <code>for</code> es un tipo de ciclo que se utiliza cuando se conoce el número exacto de veces que se desea repetir un bloque de instrucciones.
+      </p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        El ciclo <code>for</code> permite controlar tres elementos principales: la inicialización, la condición y la actualización.  
+        Se ejecuta mientras la condición sea verdadera.
+      </p>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>for (inicialización; condición; incremento) {
+  // código a ejecutar
+}</code></pre>
+
+      <h3>Partes del ciclo:</h3>
+      <ul>
+        <li><strong>Inicialización:</strong> Se ejecuta una vez al inicio (por ejemplo, <code>$i = 1</code>).</li>
+        <li><strong>Condición:</strong> Evalúa si el ciclo debe continuar (por ejemplo, <code>$i <= 5</code>).</li>
+        <li><strong>Incremento:</strong> Cambia el valor de la variable en cada repetición (por ejemplo, <code>$i++</code>).</li>
+      </ul>
+
+      <h2>Ejemplo práctico</h2>
+      <p>El siguiente ejemplo imprime los números del 1 al 5 utilizando <code>for</code>:</p>
+
+      <pre><code>&lt;?php
+for ($i = 1; $i &lt;= 5; $i++) {
+  echo "Número: $i &lt;br&gt;";
+}
+?&gt;</code></pre>
+
+      <h3>Explicación paso a paso:</h3>
+      <ul>
+        <li>Se inicia <code>$i</code> en <code>1</code>.</li>
+        <li>El ciclo se repite mientras <code>$i &lt;= 5</code>.</li>
+        <li>En cada vuelta, se imprime el número y luego <code>$i</code> aumenta en 1.</li>
+      </ul>
+
+      <h2>Salida esperada:</h2>
+      <div class="card">
+        <code>
+          Número: 1<br>
+          Número: 2<br>
+          Número: 3<br>
+          Número: 4<br>
+          Número: 5
+        </code>
+      </div>
+
+      <h2>Ejemplo 2: Conteo regresivo</h2>
+      <p>En este caso, el ciclo cuenta desde 5 hasta 1:</p>
+
+      <pre><code>&lt;?php
+for ($i = 5; $i &gt;= 1; $i--) {
+  echo "Cuenta atrás: $i &lt;br&gt;";
+}
+?&gt;</code></pre>
+
+      <h2>Salida esperada:</h2>
+      <div class="card">
+        <code>
+          Cuenta atrás: 5<br>
+          Cuenta atrás: 4<br>
+          Cuenta atrás: 3<br>
+          Cuenta atrás: 2<br>
+          Cuenta atrás: 1
+        </code>
+      </div>
+
+      <h2>Comparación con otros ciclos</h2>
+      <table>
+        <tr>
+          <th>Ciclo</th>
+          <th>Evaluación de condición</th>
+          <th>Ideal para</th>
+        </tr>
+        <tr>
+          <td><code>while</code></td>
+          <td>Antes del bloque</td>
+          <td>Repeticiones indefinidas</td>
+        </tr>
+        <tr>
+          <td><code>do...while</code></td>
+          <td>Después del bloque</td>
+          <td>Ejecutar al menos una vez</td>
+        </tr>
+        <tr>
+          <td><code>for</code></td>
+          <td>Antes del bloque</td>
+          <td>Repeticiones conocidas</td>
+        </tr>
+      </table>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

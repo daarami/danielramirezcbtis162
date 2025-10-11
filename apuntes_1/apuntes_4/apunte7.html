@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sentencia $_GET – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de la sentencia $_GET en PHP con ejemplos, explicación y salida esperada." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Sentencia <code>$_GET</code> en PHP</h1>
+      <p class="lead">
+        <code>$_GET</code> es una variable superglobal que se utiliza para capturar datos enviados mediante la URL, generalmente desde formularios con el método <code>get</code>.
+      </p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        Los datos enviados se agregan a la URL en forma de parámetros (query string) y se acceden a través de la variable <code>$_GET</code> mediante la clave asignada a cada campo.
+      </p>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>&lt;?php
+$valor = $_GET['clave'];
+?&gt;</code></pre>
+
+      <h2>Ejemplo práctico: Formulario simple</h2>
+      <p>Formulario HTML que envía datos por <code>GET</code>:</p>
+      <pre><code>&lt;form action="procesar.php" method="get"&gt;
+  Nombre: &lt;input type="text" name="nombre"&gt;&lt;br&gt;
+  Edad: &lt;input type="number" name="edad"&gt;&lt;br&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+
+      <p>Archivo <code>procesar.php</code> que recibe los datos:</p>
+      <pre><code>&lt;?php
+$nombre = $_GET['nombre'];
+$edad = $_GET['edad'];
+
+echo "Hola $nombre, tienes $edad años.";
+?&gt;</code></pre>
+
+      <h3>Salida esperada (si se envía nombre=Daniel y edad=17):</h3>
+      <div class="card">
+        <code>
+          Hola Daniel, tienes 17 años.
+        </code>
+      </div>
+
+      <h2>Consideraciones importantes</h2>
+      <ul>
+        <li>Los datos enviados por <code>GET</code> son visibles en la URL.</li>
+        <li>No es seguro enviar información sensible mediante <code>GET</code>.</li>
+        <li>Es útil para pasar parámetros entre páginas y para enlaces que requieren información dinámica.</li>
+        <li>Se puede combinar con <code>isset()</code> para verificar si un parámetro existe:</li>
+      </ul>
+
+      <pre><code>&lt;?php
+if(isset($_GET['nombre'])) {
+  echo "Nombre recibido: " . $_GET['nombre'];
+} else {
+  echo "No se recibió nombre.";
+}
+?&gt;</code></pre>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

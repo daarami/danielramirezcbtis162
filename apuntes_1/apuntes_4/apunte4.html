@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sentencia foreach – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de la sentencia foreach en PHP con ejemplos, explicación y salida esperada." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Sentencia <code>foreach</code> en PHP</h1>
+      <p class="lead">
+        La sentencia <code>foreach</code> es un tipo de ciclo especial en PHP diseñado para recorrer todos los elementos de un arreglo o matriz, sin necesidad de usar índices numéricos.
+      </p>
+
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        Este ciclo toma cada elemento de un arreglo uno por uno y permite trabajar con él dentro del bloque del ciclo.  
+        Es ideal cuando no necesitas saber el número exacto de elementos o los índices.
+      </p>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>foreach ($arreglo as $valor) {
+  // código que usa $valor
+}</code></pre>
+
+      <p>También puede obtener tanto la clave (índice) como el valor:</p>
+      <pre><code>foreach ($arreglo as $clave =&gt; $valor) {
+  // código que usa $clave y $valor
+}</code></pre>
+
+      <h2>Ejemplo 1: Recorrer un arreglo simple</h2>
+      <pre><code>&lt;?php
+$frutas = ["Manzana", "Banana", "Pera", "Fresa"];
+
+foreach ($frutas as $fruta) {
+  echo "Fruta: $fruta &lt;br&gt;";
+}
+?&gt;</code></pre>
+
+      <h3>Explicación:</h3>
+      <ul>
+        <li>El ciclo toma cada valor del arreglo <code>$frutas</code>.</li>
+        <li>En cada repetición, la variable <code>$fruta</code> contiene el valor actual.</li>
+        <li>Se imprime el nombre de la fruta en cada vuelta.</li>
+      </ul>
+
+      <h2>Salida esperada:</h2>
+      <div class="card">
+        <code>
+          Fruta: Manzana<br>
+          Fruta: Banana<br>
+          Fruta: Pera<br>
+          Fruta: Fresa
+        </code>
+      </div>
+
+      <h2>Ejemplo 2: Recorrer arreglo asociativo</h2>
+      <pre><code>&lt;?php
+$edades = ["Ana" =&gt; 20, "Luis" =&gt; 22, "María" =&gt; 19];
+
+foreach ($edades as $nombre =&gt; $edad) {
+  echo "$nombre tiene $edad años.&lt;br&gt;";
+}
+?&gt;</code></pre>
+
+      <h3>Salida esperada:</h3>
+      <div class="card">
+        <code>
+          Ana tiene 20 años.<br>
+          Luis tiene 22 años.<br>
+          María tiene 19 años.
+        </code>
+      </div>
+
+      <h2>Ventajas del ciclo <code>foreach</code></h2>
+      <ul>
+        <li>No requiere usar índices manualmente.</li>
+        <li>Evita errores comunes al recorrer arreglos.</li>
+        <li>Funciona tanto con arreglos numéricos como asociativos.</li>
+        <li>Hace el código más legible y corto.</li>
+      </ul>
+
+      <h2>Comparación con otros ciclos</h2>
+      <table>
+        <tr>
+          <th>Ciclo</th>
+          <th>Uso principal</th>
+          <th>Ventaja</th>
+        </tr>
+        <tr>
+          <td><code>for</code></td>
+          <td>Repeticiones con contador</td>
+          <td>Control preciso de índice</td>
+        </tr>
+        <tr>
+          <td><code>while</code></td>
+          <td>Repeticiones condicionales</td>
+          <td>Útil cuando no se conoce la cantidad</td>
+        </tr>
+        <tr>
+          <td><code>foreach</code></td>
+          <td>Recorrer arreglos</td>
+          <td>Más simple y legible</td>
+        </tr>
+      </table>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

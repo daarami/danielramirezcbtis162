@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Arrays – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el uso de arrays en PHP con ejemplos, explicación y salida esperada." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Arrays en PHP</h1>
+      <p class="lead">
+        Un <strong>array</strong> es una estructura de datos que permite almacenar múltiples valores bajo un mismo nombre y acceder a ellos mediante índices o claves.
+      </p>
+
+      <h2>Tipos de arrays</h2>
+      <ul>
+        <li><strong>Array indexado:</strong> Los elementos tienen un índice numérico automático o definido por el usuario.</li>
+        <li><strong>Array asociativo:</strong> Los elementos se acceden mediante claves definidas por el usuario.</li>
+        <li><strong>Array multidimensional:</strong> Contiene uno o más arrays dentro de otro array.</li>
+      </ul>
+
+      <h2>Sintaxis básica</h2>
+      <pre><code>// Array indexado
+$frutas = array("Manzana", "Banana", "Cereza");
+
+// Array asociativo
+$edades = array("Daniel" =&gt; 17, "Ana" =&gt; 18);
+
+// Array multidimensional
+$personas = array(
+    array("nombre" =&gt; "Daniel", "edad" =&gt; 17),
+    array("nombre" =&gt; "Ana", "edad" =&gt; 18)
+);</code></pre>
+
+      <h2>Ejemplo práctico: Array indexado</h2>
+      <pre><code>&lt;?php
+$colores = array("Rojo", "Verde", "Azul");
+
+echo $colores[0]; // Rojo
+echo $colores[2]; // Azul
+?&gt;</code></pre>
+
+      <h3>Salida esperada:</h3>
+      <div class="card">
+        <code>
+          Rojo<br>
+          Azul
+        </code>
+      </div>
+
+      <h2>Ejemplo práctico: Array asociativo</h2>
+      <pre><code>&lt;?php
+$edades = array("Daniel" =&gt; 17, "Ana" =&gt; 18);
+
+echo "Daniel tiene " . $edades['Daniel'] . " años.";
+echo "&lt;br&gt;";
+echo "Ana tiene " . $edades['Ana'] . " años.";
+?&gt;</code></pre>
+
+      <h3>Salida esperada:</h3>
+      <div class="card">
+        <code>
+          Daniel tiene 17 años.<br>
+          Ana tiene 18 años.
+        </code>
+      </div>
+
+      <h2>Ejemplo práctico: Array multidimensional</h2>
+      <pre><code>&lt;?php
+$personas = array(
+    array("nombre" =&gt; "Daniel", "edad" =&gt; 17),
+    array("nombre" =&gt; "Ana", "edad" =&gt; 18)
+);
+
+echo $personas[0]['nombre'] . " tiene " . $personas[0]['edad'] . " años.&lt;br&gt;";
+echo $personas[1]['nombre'] . " tiene " . $personas[1]['edad'] . " años.";
+?&gt;</code></pre>
+
+      <h3>Salida esperada:</h3>
+      <div class="card">
+        <code>
+          Daniel tiene 17 años.<br>
+          Ana tiene 18 años.
+        </code>
+      </div>
+
+      <h2>Funciones útiles con arrays</h2>
+      <ul>
+        <li><code>count($array)</code> – Devuelve el número de elementos.</li>
+        <li><code>array_push($array, $valor)</code> – Agrega un elemento al final.</li>
+        <li><code>array_pop($array)</code> – Elimina el último elemento.</li>
+        <li><code>array_keys($array)</code> – Devuelve todas las claves de un array asociativo.</li>
+        <li><code>array_values($array)</code> – Devuelve todos los valores de un array asociativo.</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
