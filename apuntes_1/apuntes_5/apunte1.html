@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Sistema de Sesiones (yt_sesion) – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte sobre el proyecto yt_sesion: manejo de sesiones y control de acceso en PHP, explicación de archivos y flujo." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content">
+      <h1>Sistema de sesiones: explicación del proyecto <code>yt_sesion</code></h1>
+      <p class="lead">
+        Este proyecto es una pequeña aplicación en PHP que demuestra cómo controlar acceso a páginas usando sesiones. Hay dos tipos de visitantes: el <em>invitado</em> (sin iniciar sesión) y el <em>usuario autenticado</em> (en el ejemplo el usuario por defecto es "Daniel"). El sistema usa variables de sesión para almacenar información temporal (contador de visitas, datos de usuario y preferencias) y redirige a quien no tenga sesión activa cuando intenta abrir contenido protegido.
+      </p>
+
+      <h2>Resumen del flujo</h2>
+      <p>
+        Al entrar en <code>index.php</code> se inicializa (o incrementa) un contador por sesión y se muestra si el visitante está autenticado o no. Desde ahí se puede iniciar sesión (vía <code>sesion.php</code>) o intentar acceder a páginas privadas (<code>pagina1.php</code>, <code>pagina2.php</code>, <code>pagina3.php</code>). Las páginas privadas verifican que exista la sesión; si no, devuelven el visitante al índice. También se almacenan algunos datos de sesión (color, animal, marca de tiempo) que se muestran en las páginas protegidas. El cierre de sesión limpia la información y redirige al inicio.
+      </p>
+
+      <h2>Archivos clave y explicación</h2>
+      <p>Abajo están los archivos principales del proyecto. Incluyo el código tal como lo compartiste para que puedas revisarlo y probarlo.</p>
+
+      <h3><code>index.php</code></h3>
+      <pre><code>&lt;?php 
+session_start();
+if (empty($_SESSION['count'])) {
+    $_SESSION['count'] = 1;
+} else {
+    $_SESSION['count']++;
+}
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Página de Inicio&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body background="w3.png"&gt; 
+    &lt;div class="contador-visitas"&gt;
+        &lt;p&gt;
+            Hola visitante, ha visto esta página 
+            &lt;span class="numero-visitas"&gt;&lt;?php echo $_SESSION['count']; ?&gt;&lt;/span&gt; 
+            veces.
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;nav class="nav-inicio"&gt;
+        &lt;a href="sesion.php" class="boton-link"&gt;Iniciar sesión&lt;/a&gt;
+        &lt;a href="pagina1.php" class="boton-link"&gt;Datos privados&lt;/a&gt;
+    &lt;/nav&gt;
+
+    &lt;header class="header-inicio"&gt;
+        &lt;h1&gt;
+            Bienvenido: 
+            &lt;span class="nombre-usuario"&gt;
+                &lt;?php echo isset($_SESSION['admin']) ? $_SESSION['admin'] : 'Invitado'; ?&gt;
+            &lt;/span&gt;
+        &lt;/h1&gt;
+    &lt;/header&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h3><code>pagina1.php</code></h3>
+      <pre><code>&lt;?php
+session_start();
+
+if (!isset($_SESSION['admin'])) {
+    header('Location: index.php');
+    exit();
+}
+
+$_SESSION['color'] = 'azul';
+$_SESSION['animal'] = 'elefante';
+$_SESSION['tiempo'] = time(); 
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="style.css?v=2"&gt;
+    &lt;title&gt;Página de Bienvenida&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body background="w1.png"&gt;
+        &lt;h1&gt;Bienvenido &lt;?php echo htmlspecialchars($_SESSION['admin']); ?&gt;&lt;/h1&gt;
+        &lt;a href="cerrar.php"&gt;Cerrar Sesión&lt;/a&gt;
+
+    
+        &lt;h2&gt;Bienvenido a la primera página&lt;/h2&gt;
+        &lt;div&gt;
+            &lt;a href="pagina2.php"&gt;Ir a Página 2&lt;/a&gt;
+            &lt;a href="pagina3.php"&gt;Ir a Página 3&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="info-box"&gt;
+            &lt;p&gt;&lt;strong&gt;Color favorito:&lt;/strong&gt; &lt;?php echo htmlspecialchars($_SESSION['color']); ?&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Animal favorito:&lt;/strong&gt; &lt;?php echo htmlspecialchars($_SESSION['animal']); ?&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Hora de inicio de sesión:&lt;/strong&gt; 
+                &lt;?php echo date('d/m/Y H:i:s', $_SESSION['tiempo']); ?&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="media-section"&gt;
+            &lt;img src="snoopy.png" width="315" height="315" alt="Imagen decorativa de corazón" title="snoopy"&gt;
+        &lt;figcaption&gt;Snoopy&lt;/figcaption&gt;
+            &lt;video src="clip2.mp4" width="560" height="315" controls&gt;&lt;/video&gt;
+            &lt;iframe loading="lazy" src="https://www.youtube.com/embed/qG_zNV3j8Ac"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;
+        &lt;/div&gt;
+    
+        &lt;p&gt;
+            Para eliminar sus datos de visita, 
+            &lt;a href="cerrar.php?&lt;?php echo htmlspecialchars(SID); ?&gt;"&gt;haga clic aquí&lt;/a&gt;.
+        &lt;/p&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h3><code>pagina2.php</code></h3>
+      <pre><code>&lt;?php
+session_start();
+
+if (empty($_SESSION['count'])) {
+    $_SESSION['count'] = 1;
+} else {
+    $_SESSION['count']++;
+}
+
+$_SESSION['color'] = 'azul';
+$_SESSION['animal'] = 'elefante';
+$_SESSION['tiempo'] = time();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Segunda Página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css?v=2"&gt;
+&lt;/head&gt;
+&lt;body background="w2.png"&gt;
+
+        &lt;h1&gt;Bienvenido a la segunda página&lt;/h1&gt;
+
+    &lt;nav class="nav-segunda"&gt;
+        &lt;a href="pagina1.php" class="boton-link"&gt;Ir a página 1&lt;/a&gt;
+        &lt;a href="pagina3.php" class="boton-link"&gt;Ir a página 3&lt;/a&gt;
+       
+    &lt;/nav&gt;
+
+    &lt;section class="info-box"&gt;
+        &lt;p&gt;&lt;strong&gt;Color favorito:&lt;/strong&gt; &lt;?php echo htmlspecialchars($_SESSION['color']); ?&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Animal favorito:&lt;/strong&gt; &lt;?php echo htmlspecialchars($_SESSION['animal']); ?&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Hora de inicio de sesión:&lt;/strong&gt; &lt;?php echo date('d/m/Y H:i:s', $_SESSION['tiempo']); ?&gt;&lt;/p&gt;
+        
+    &lt;/section&gt;
+
+    &lt;section class="media-section"&gt;
+
+        &lt;img src="perro.png" width="315" height="315" alt="Imagen de usuario" class="imagen-segunda" title="Perrito"&gt;
+        &lt;figcaption&gt;Perrito&lt;/figcaption&gt;
+
+        &lt;video src="clip1.mp4" width="560" height="315" controls class="video-local"&gt;&lt;/video&gt;
+        
+            &lt;iframe loading="lazy" src="https://www.youtube.com/embed/uYPgFIqmyAY"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/section&gt;
+
+    
+        &lt;p&gt;
+            Para eliminar sus datos de visita, 
+            &lt;a href="cerrar.php?&lt;?php echo htmlspecialchars(SID); ?&gt;" class="enlace-cerrar"&gt;Haga clic aquí&lt;/a&gt;
+        &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h3><code>pagina3.php</code></h3>
+      <pre><code>&lt;?php
+session_start();
+
+if (empty($_SESSION['count'])) {
+    $_SESSION['count'] = 1;
+} else {
+    $_SESSION['count']++;
+}
+
+$_SESSION['color'] = 'azul';
+$_SESSION['animal'] = 'elefante';
+$_SESSION['tiempo'] = time();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Segunda Página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css?v=2"&gt;
+&lt;/head&gt;
+&lt;body background="frank.jpg"&gt;
+
+        &lt;h1&gt;Bienvenido a la tercera página&lt;/h1&gt;
+
+    &lt;nav class="nav-segunda"&gt;
+        &lt;a href="pagina1.php" class="boton-link"&gt;Ir a página 1&lt;/a&gt;
+        &lt;a href="pagina2.php" class="boton-link"&gt;Ir a página 2&lt;/a&gt;
+       
+    &lt;/nav&gt;
+
+    &lt;section class="info-box"&gt;
+        &lt;p&gt;&lt;strong&gt;Color favorito:&lt;/strong&gt; &lt;?php echo htmlspecialchars($_SESSION['color']); ?&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Animal favorito:&lt;/strong&gt; &lt;?php echo htmlspecialchars($_SESSION['animal']); ?&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Hora de inicio de sesión:&lt;/strong&gt; &lt;?php echo date('d/m/Y H:i:s', $_SESSION['tiempo']); ?&gt;&lt;/p&gt;
+        
+    &lt;/section&gt;
+
+    &lt;section class="media-section"&gt;
+
+        &lt;img src="oso.png" width="315" height="315" alt="Imagen de usuario" class="imagen-segunda" title="Osito"&gt;
+        &lt;figcaption&gt;ositoo&lt;/figcaption&gt;
+
+        &lt;video src="clip3.mp4" width="560" height="315" controls class="video-local"&gt;&lt;/video&gt;
+
+            &lt;iframe loading="lazy" src="https://www.youtube.com/embed/C3JKGPGeLcY"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/section&gt;
+
+    
+        &lt;p&gt;
+            Para eliminar sus datos de visita, 
+            &lt;a href="cerrar.php?&lt;?php echo htmlspecialchars(SID); ?&gt;" class="enlace-cerrar"&gt;Haga clic aquí&lt;/a&gt;
+        &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h3><code>protegido.php</code></h3>
+      <pre><code>&lt;?php
+session_start();
+
+if( isset($_SESSION['admin'])){
+    echo 'Bienvenido'.$_SESSION['admin'];
+    echo '&lt;br&gt; &lt;a href="cerrar.php"&gt;Cerrar sesion&lt;/a&gt;';
+}else{
+    header('location:index.php');
+}
+?&gt;</code></pre>
+
+      <h3><code>sesion.php</code></h3>
+      <pre><code>&lt;?php
+session_start();
+
+$usuario= "Daniel";
+
+$_SESSION['admin']= $usuario;
+
+if(isset($_SESSION['admin'])){
+    header('location:index.php');
+}
+?&gt;</code></pre>
+
+      <h2>Qué hace cada parte</h2>
+      <ul>
+        <li><strong>Inicio &amp; contador:</strong> <code>index.php</code> arranca la sesión y lleva un contador simple por sesión para mostrar cuántas veces se ha visitado la página en esa sesión.</li>
+        <li><strong>Iniciar sesión:</strong> <code>sesion.php</code> simula el inicio de sesión asignando una variable de sesión <code>$_SESSION['admin']</code> con el valor "Daniel" y redirige a la página principal.</li>
+        <li><strong>Páginas protegidas:</strong> Antes de mostrar contenido privado, las páginas verifican si <code>$_SESSION['admin']</code> existe. Si no, devuelven al visitante al <code>index.php</code>. De este modo se evita el acceso directo sin autenticación.</li>
+        <li><strong>Datos en sesión:</strong> En las páginas privadas se guardan datos temporales (color, animal, tiempo) en la sesión para mostrarlos en la interfaz; es un ejemplo de cómo persistir pequeñas preferencias o metadatos mientras dura la sesión.</li>
+        <li><strong>Cierre de sesión:</strong> se supone que <code>cerrar.php</code> destruye/limpia la sesión y redirige al índice (ese archivo no lo incluiste aquí, pero en el proyecto debe encargarse de eliminar variables, cookies y llamar a <code>session_destroy()</code>).</li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
