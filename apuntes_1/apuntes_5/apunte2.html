@@ -1,0 +1,151 @@
+<!doctype html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Proyecto yt_form – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte que explica el funcionamiento del proyecto yt_form: registro, autenticación y el juego 'cuadro mágico'." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+```
+  <nav class="main-nav" aria-label="Navegación principal">
+    <ul>
+      <li><a href="../../index.html#inicio">Inicio</a></li>
+      <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+      <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+      <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+    </ul>
+  </nav>
+</div>
+```
+
+  </header>
+
+  <!-- CONTENIDO -->
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Proyecto <code>yt_form</code></h1>
+      <p class="lead">
+        <code>yt_form</code> es una aplicación web educativa en PHP que integra un sistema de registro y autenticación de usuarios con un componente interactivo: el juego del "cuadro mágico". El proyecto muestra un flujo completo —registro, login, sesiones, contenido restringido, y almacenamiento de resultados en una base de datos— usando buenas prácticas básicas de seguridad y PDO para acceder a MySQL.
+      </p>
+
+```
+  <h2>Estructura general y flujo</h2>
+  <p>
+    La aplicación arranca en <code>index.php</code>, que presenta dos formularios: uno para registrarse y otro para iniciar sesión. Tras un registro válido el usuario se almacena en la base de datos (tabla <code>usuarios</code>) y se crean registros auxiliares en tablas relacionadas (por ejemplo <code>contactos</code> y <code>registro</code>). El inicio de sesión valida credenciales y, si son correctas, se establece una sesión PHP que permite acceder a páginas privadas como <code>restringido.php</code> donde está el juego.
+  </p>
+
+  <h2>Registro de usuarios (agregar_usuario.php)</h2>
+  <p>
+    El proceso de registro sigue estos pasos clave:
+  </p>
+  <ul>
+    <li>Validar que el nombre de usuario no exista ya en la tabla <code>usuarios</code>.</li>
+    <li>Comprobar que las dos contraseñas coincidan y cumplan reglas mínimas (longitud, caracteres).</li>
+    <li>Hashear la contraseña con <code>password_hash()</code> antes de guardarla.</li>
+    <li>Insertar el usuario en la base de datos y crear filas relacionadas en otras tablas con valores predeterminados (por ejemplo, información de contacto inicial o registro de estadísticas).</li>
+  </ul>
+
+  <h2>Inicio de sesión (login.php)</h2>
+  <p>
+    Para iniciar sesión:
+  </p>
+  <ul>
+    <li>Se busca el usuario por nombre en la base de datos.</li>
+    <li>Se verifica la contraseña usando <code>password_verify()</code>.</li>
+    <li>Si la comprobación es correcta se llama a <code>session_start()</code>, se asignan variables de sesión (por ejemplo <code>$_SESSION['usuario']</code>) y se redirige a la zona privada.</li>
+    <li>Se recomienda llamar a <code>session_regenerate_id(true)</code> al autenticarse para mitigar fijación de sesión.</li>
+  </ul>
+
+  <h2>Zona restringida y el juego: cuadro mágico (restringido.php)</h2>
+  <p>
+    La página privada contiene el juego interactivo: una cuadrícula 3×3 donde el objetivo es colocar los números del 1 al 9 de modo que la suma de cada fila, columna y diagonal sea la misma. Características principales:
+  </p>
+  <ul>
+    <li>La interfaz es un formulario o tablero interactivo con validaciones en cliente y servidor.</li>
+    <li>El sistema registra intentos y aciertos por usuario; esos resultados se guardan en la base de datos (tabla <code>registro</code> o similar).</li>
+    <li>Se muestran estadísticas personales en <code>usuario.php</code>, y una tabla de puntuaciones ordenada por más aciertos y menos intentos.</li>
+  </ul>
+
+  <h2>Gestión de perfil (usuario2.php)</h2>
+  <p>
+    Los usuarios pueden editar sus datos personales en un formulario que actualiza campos como teléfono, dirección, ficha, años y plantel. Estas operaciones usan sentencias preparadas para evitar inyección SQL y mantienen la integridad de los datos.
+  </p>
+
+  <h2>Manejo de sesiones y cierre (cerrar.php)</h2>
+  <p>
+    La aplicación usa sesiones PHP para mantener el estado de autenticación. <code>cerrar.php</code> elimina las variables de sesión, borra la cookie de sesión si existe y llama a <code>session_destroy()</code> para terminar la sesión de forma segura y redirigir al usuario al inicio.
+  </p>
+
+  <h2>Seguridad y buenas prácticas</h2>
+  <ul>
+    <li><strong>Contraseñas:</strong> siempre almacenarlas con <code>password_hash()</code> y verificar con <code>password_verify()</code>.</li>
+    <li><strong>Base de datos:</strong> usar <code>PDO</code> y sentencias preparadas (<code>prepare/execute</code>) para todas las consultas con datos del usuario.</li>
+    <li><strong>Sesiones:</strong> regenerar ID en login y usar parámetros de cookie seguros (<code>httponly</code>, <code>secure</code> en HTTPS).</li>
+    <li><strong>Validación:</strong> validar y sanitizar entradas tanto en cliente como en servidor; escapar salidas con <code>htmlspecialchars()</code> para prevenir XSS.</li>
+    <li><strong>Separación de responsabilidades:</strong> es recomendable separar la lógica (PHP) de la presentación (HTML) para facilitar mantenimiento.</li>
+  </ul>
+
+  <h2>Interacciones entre tablas</h2>
+  <p>
+    El sistema relaciona varias tablas para almacenar información completa del usuario:
+  </p>
+  <ul>
+    <li><code>usuarios</code>: credenciales y datos básicos.</li>
+    <li><code>contactos</code>: teléfono, dirección y datos de contacto.</li>
+    <li><code>registro</code>: estadísticas del juego (intentos, aciertos, fecha).</li>
+  </ul>
+
+  <h2>Resumen del flujo de uso</h2>
+  <ol>
+    <li>El visitante se registra en <code>index.php</code> → datos validados → contraseña hasheada → filas insertadas en <code>usuarios</code>, <code>contactos</code> y <code>registro</code>.</li>
+    <li>El usuario inicia sesión en <code>login.php</code> → credenciales verificadas con <code>password_verify()</code> → sesión activa.</li>
+    <li>Accede a <code>restringido.php</code> y juega el cuadro mágico; cada intento se almacena y las estadísticas aparecen en <code>usuario.php</code>.</li>
+    <li>Puede editar su perfil en <code>usuario2.php</code> y cerrar sesión en <code>cerrar.php</code>.</li>
+  </ol>
+
+  <h2>Qué demuestra el proyecto</h2>
+  <p>
+    <code>yt_form</code> integra aprendizaje práctico sobre: autenticación segura, manejo de sesiones, operaciones CRUD con PDO, validación de formularios y construcción de una experiencia interactiva que guarda y muestra estadísticas por usuario. Es un ejemplo completo que combina backend, base de datos y una interfaz educativa.
+  </p>
+
+  <div class="btn-row">
+    <a href="../../index.html" class="btn">Volver al inicio</a>
+  </div>
+</article>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>

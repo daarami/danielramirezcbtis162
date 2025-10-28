@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Proyecto yt_colores – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte que explica el funcionamiento del proyecto yt_colores: CRUD de colores con PHP, MySQL y Bootstrap." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+```
+  <nav class="main-nav" aria-label="Navegación principal">
+    <ul>
+      <li><a href="../../index.html#inicio">Inicio</a></li>
+      <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+      <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+      <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+    </ul>
+  </nav>
+</div>
+```
+
+  </header>
+
+  <!-- CONTENIDO -->
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Proyecto <code>yt_colores</code></h1>
+
+```
+  <p class="lead">
+    <code>yt_colores</code> es una pequeña aplicación CRUD en PHP que permite gestionar una lista de colores (usando las clases de alert de Bootstrap) y sus descripciones. Está pensada como ejemplo práctico para ver operaciones básicas con bases de datos (MySQL), interacción con formularios y una interfaz visual inmediata gracias a Bootstrap 5.
+  </p>
+
+  <h2>¿Qué hace y por qué es útil?</h2>
+  <p>
+    Permite crear nuevos registros de color, leer la lista completa, editar entradas existentes y eliminarlas. Cada color se muestra en la interfaz usando la clase <code>alert-*</code> de Bootstrap para que el resultado sea visual y directo: si guardas <code>success</code> verás un alert verde, si guardas <code>danger</code> verás rojo, etc. Es ideal para practicar operaciones CRUD y ver inmediatamente el efecto visual de los datos.
+  </p>
+
+  <h2>Archivos principales y su rol</h2>
+  <ul>
+    <li><strong><code>index.php</code></strong> — Panel principal: consulta la tabla y lista todos los colores con controles para editar o borrar; incluye enlace para agregar un nuevo color.</li>
+    <li><strong><code>agregar.php</code></strong> — Formulario para crear un nuevo color; procesa el <code>POST</code> e inserta el registro en la base de datos.</li>
+    <li><strong><code>editar.php</code></strong> — Formulario pre-llenado para modificar un color; al enviar hace <code>UPDATE</code> y redirige al listado.</li>
+    <li><strong><code>eliminar.php</code></strong> — Script que recibe <code>id</code> por <code>GET</code> y borra la fila correspondiente (normalmente tras confirmación).</li>
+    <li><strong><code>conexion.php</code></strong> (recomendado) — Centraliza la conexión a la base de datos para reutilizar la misma lógica desde todos los archivos.</li>
+    <li><strong><code>borrame.php</code></strong> — Utilidad o script de pruebas (depuración/ensayo de queries).</li>
+  </ul>
+
+  <h2>Flujo de la aplicación</h2>
+  <ol>
+    <li>Abrir <code>index.php</code> → el script consulta <code>tabla_colores</code> y muestra cada fila como un <code>div.alert</code> con íconos para editar o eliminar.</li>
+    <li>Clic en "Agregar color" → abrir <code>agregar.php</code>, completar formulario y enviar → el servidor inserta el registro y muestra un mensaje (o redirige).</li>
+    <li>Editar → abrir <code>editar.php?id=... </code> con campos pre-llenados → guardar cambios → el servidor ejecuta <code>UPDATE</code> y vuelve al listado.</li>
+    <li>Eliminar → <code>eliminar.php?id=...</code> ejecuta <code>DELETE</code> y regresa al listado (ideal con confirmación JS antes de borrar).</li>
+  </ol>
+  <div class="btn-row">
+    <a href="../../index.html" class="btn">Volver al inicio</a>
+  </div>
+</article>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
