@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Tipos de datos - Texto (AppSheet) – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte breve sobre los tipos de datos de texto en AppSheet: LongText, Name y Text." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>TIPOS DE DATOS — <code>Texto</code></h1>
+
+      <p class="lead">
+        AppSheet ofrece varios tipos de texto para columnas según el uso y la longitud del contenido.
+      </p>
+
+      <h2>LongText</h2>
+      <p>
+        Permite una o más líneas de texto. Útil para descripciones, comentarios o notas largas.
+      </p>
+
+      <h2>Name</h2>
+      <p>
+        Diseñado para nombres (personas, lugares, entidades). Optimiza la validación y el formato de nombres.
+      </p>
+
+      <h2>Text</h2>
+      <p>
+        Texto de una sola línea. Ideal para títulos, etiquetas o valores cortos.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

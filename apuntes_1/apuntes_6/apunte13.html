@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Tipos de datos - Mapeables (1) (AppSheet) – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte breve sobre los tipos de datos mapeables en AppSheet: Address y LatLong." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>TIPOS DE DATOS — <code>Mapeables (1)</code></h1>
+
+      <p class="lead">
+        Los tipos de datos mapeables permiten visualizar información geográfica dentro de la aplicación, mostrando ubicaciones directamente en un mapa.
+      </p>
+
+      <h2>Address</h2>
+      <p>
+        Representa una <b>dirección postal o calle completa</b>. Puede usarse para mostrar ubicaciones en el mapa dentro de la app.
+      </p>
+
+      <h2>LatLong</h2>
+      <p>
+        Define una <b>latitud y longitud</b> en formato <code>(48.5564, -122.3421)</code>. En los formularios, este tipo permite <b>rellenar la ubicación actual</b> del dispositivo con un solo clic.
+        <br>Ejemplo de uso: muestra de <i>Inspección agrícola</i> en AppSheet.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

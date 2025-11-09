@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Tipos de datos - Enumerados (2) (AppSheet) – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte breve sobre los tipos de datos enumerados en AppSheet: EnumList y Progress." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>TIPOS DE DATOS — <code>Enumerados (2)</code></h1>
+
+      <p class="lead">
+        AppSheet ofrece variaciones de los tipos enumerados para permitir múltiples selecciones o indicar progreso dentro de una app.
+      </p>
+
+      <h2>EnumList</h2>
+      <p>
+        Similar a <code>Enum</code>, pero permite seleccionar <b>múltiples valores</b> de una lista de opciones predefinidas. Muy útil cuando un registro puede pertenecer a varias categorías o tener varios estados.
+        <br>Consulta también: <i>Desplegables en formularios</i>.
+      </p>
+
+      <h2>Progress</h2>
+      <p>
+        Tipo de <code>Enum</code> definido por el sistema, usado para representar el progreso de una tarea o proyecto. Los valores disponibles son:
+        <b>Empty</b>, <b>Quarter</b> (o <b>One Quarter</b>), <b>Half</b>, <b>Three Quarter</b> (o <b>Three Quarters</b>) y <b>Full</b>.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

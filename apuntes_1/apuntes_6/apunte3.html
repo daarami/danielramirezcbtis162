@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Bases de datos (AppSheet) – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Resumen sobre los tipos de bases de datos que AppSheet puede usar: Excel, Google Sheets y su base de datos nativa." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Bases de datos (AppSheet)</h1>
+
+      <p class="lead">
+        Formas principales de crear y conectar las bases de datos que usa AppSheet para almacenar la información.
+      </p>
+
+      <h2>Excel (.xlsx)</h2>
+      <p>
+        Crea tus tablas en un archivo Excel (.xlsx) y súbelo a Google Drive. Cada hoja del archivo puede funcionar como una tabla que AppSheet leerá.
+      </p>
+
+      <h2>Google Sheets</h2>
+      <p>
+        Crea las tablas directamente en Google Sheets dentro de tu Google Drive. Cada hoja representa una tabla y se edita en línea.
+      </p>
+
+      <h2>Base de datos nativa</h2>
+      <p>
+        También puedes diseñar las tablas directamente dentro del editor de AppSheet, sin depender de archivos externos.  
+        Este sistema nativo aún está en fase <strong>BETA</strong> y tiene algunas limitaciones:
+      </p>
+      <ul>
+        <li>Máximo de <strong>10,000 filas</strong> por tabla.</li>
+        <li>Hasta <strong>20 tablas</strong> por base de datos.</li>
+      </ul>
+
+      <h2>Conexión con Google Drive</h2>
+      <p>
+        Si usas Excel o Google Sheets, es necesario vincular AppSheet con tu cuenta de Google Drive para que la app pueda acceder y usar las tablas como base de datos.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

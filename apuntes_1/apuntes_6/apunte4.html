@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Relaciones entre tablas – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Explicación breve sobre las relaciones entre tablas en AppSheet y cómo se conectan mediante campos comunes." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Relaciones entre tablas</h1>
+
+      <p class="lead">
+        Las relaciones entre tablas permiten conectar información de diferentes fuentes dentro de AppSheet.
+      </p>
+
+      <h2>¿Qué es una relación?</h2>
+      <p>
+        Una relación ocurre cuando una tabla usa un campo que hace referencia a otra tabla.  
+        Por ejemplo, una tabla de <strong>Pedidos</strong> puede incluir una columna que apunte a la tabla de <strong>Clientes</strong>.
+      </p>
+      
+      <div class="img-container" style="text-align:center; margin: 1.5rem 0;">
+        <img src="../../img/relaciones_ejemplo.png" alt="Ejemplo de relación entre tablas" style="max-width:90%; border-radius:1rem; box-shadow:0 0 10px rgba(0,0,0,0.2);">
+      </div>
+
+      <h2>Tipos comunes de relación</h2>
+      <ul>
+        <li><strong>Uno a muchos:</strong> Un cliente puede tener varios pedidos.</li>
+        <li><strong>Muchos a uno:</strong> Muchos pedidos pertenecen a un mismo cliente.</li>
+        <li><strong>Muchos a muchos:</strong> Se da cuando varias tablas se conectan entre sí mediante una tabla intermedia.</li>
+      </ul>
+
+      <h2>Campos clave</h2>
+      <p>
+        Para crear relaciones, se usan campos clave (IDs) que identifican de forma única cada registro.  
+        AppSheet detecta estas claves y permite mostrar datos relacionados de forma automática.
+      </p>
+
+      <h2>Importancia</h2>
+      <p>
+        Las relaciones entre tablas permiten que la aplicación maneje datos más completos y organizados, 
+        evitando duplicar información y facilitando la creación de vistas detalladas.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

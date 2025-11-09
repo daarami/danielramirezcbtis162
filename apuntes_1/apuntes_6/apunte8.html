@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Tipos de datos - Contenido (1) (AppSheet) – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte breve sobre los tipos de datos de contenido en AppSheet: Drawing, Image y Thumbnail." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>TIPOS DE DATOS — <code>Contenido (1)</code></h1>
+
+      <p class="lead">
+        Estos tipos de datos permiten manejar contenido visual dentro de AppSheet, como imágenes o dibujos creados directamente en la aplicación.
+      </p>
+
+      <h2>Drawing</h2>
+      <p>
+        Crea un bloc de dibujo dentro de la app. Los usuarios pueden dibujar o firmar usando su pantalla táctil.
+      </p>
+
+      <h2>Image</h2>
+      <p>
+        Acepta imágenes en formatos <code>.jpg</code>, <code>.png</code> o <code>.gif</code>.  
+        Los valores pueden ser URLs de imágenes o nombres de archivos guardados en el origen de datos.  
+        También se pueden capturar desde la cámara del dispositivo o seleccionar desde la galería local.
+      </p>
+
+      <h2>Thumbnail</h2>
+      <p>
+        Similar a <code>Image</code>, pero se usa para iconos o miniaturas pequeñas.  
+        Las miniaturas también se pueden capturar como imágenes desde el dispositivo.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Tipos de datos - Contenido (2) (AppSheet) – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte breve sobre los tipos de datos de contenido en AppSheet: Signature, File y Video." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>TIPOS DE DATOS — <code>Contenido (2)</code></h1>
+
+      <p class="lead">
+        Tipos de datos para contenido especial: firmas, archivos y vídeos. Atención a las limitaciones según dónde se ejecute la app.
+      </p>
+
+      <h2>Signature</h2>
+      <p>
+        Captura una firma usando un panel táctil dentro de la app. La firma se guarda como una pequeña imagen en línea (data URL) en la hoja de cálculo o en el origen de datos.
+      </p>
+
+      <h2>File</h2>
+      <p>
+        Permite adjuntar archivos que puedan verse en un navegador (por ejemplo PDF). La captura/adjunto de archivos solo está soportada cuando la app se ejecuta en un navegador; en las aplicaciones instaladas suele ser de solo lectura.
+      </p>
+
+      <h2>Video</h2>
+      <p>
+        Acepta URLs de vídeo público (por ejemplo <code>.mpeg</code> o enlaces de YouTube). También admite el formato de URL de inserción de YouTube. No se soporta la captura de vídeo desde la app.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

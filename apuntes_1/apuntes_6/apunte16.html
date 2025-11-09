@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Tipos de datos - Control de Cambios (AppSheet) – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte breve sobre los tipos de datos de control de cambios en AppSheet: ChangeCounter, ChangeLocation y ChangeTimestamp." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>TIPOS DE DATOS — <code>Control de Cambios</code></h1>
+
+      <p class="lead">
+        Estos tipos de datos permiten registrar automáticamente cuándo, dónde o cuántas veces se ha modificado una fila en la aplicación.
+      </p>
+
+      <p>
+        De forma predeterminada, los valores de control de cambios se actualizan automáticamente cuando cambia cualquier otra columna. Sin embargo, pueden configurarse para reaccionar solo ante modificaciones en columnas específicas.
+      </p>
+
+      <h2>ChangeCounter</h2>
+      <p>
+        Muestra cuántas veces se ha editado una entrada. Es útil para llevar un conteo de modificaciones o revisiones en un registro.
+      </p>
+
+      <h2>ChangeLocation</h2>
+      <p>
+        Registra automáticamente la ubicación GPS del dispositivo en el momento en que se realizó el cambio. Ideal para auditorías o registros de campo.
+      </p>
+
+      <h2>ChangeTimestamp</h2>
+      <p>
+        Guarda la fecha y hora exactas en que se editó por última vez una entrada. Sirve para rastrear cuándo se actualizó un dato por última vez.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

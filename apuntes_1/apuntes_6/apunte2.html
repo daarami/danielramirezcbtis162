@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: Elementos importantes de AppSheet – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Resumen breve de los elementos más importantes al usar AppSheet: base de datos, tablas y tipos de datos." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>Elementos importantes de <code>AppSheet</code></h1>
+
+      <p class="lead">
+        Para crear una aplicación funcional en AppSheet, es necesario comprender los elementos básicos que la sustentan.
+      </p>
+
+      <h2>1. Base de datos</h2>
+      <p>
+        AppSheet puede conectarse a diferentes tipos de fuentes de datos, como:
+      </p>
+      <ul>
+        <li>MySQL</li>
+        <li>Excel</li>
+        <li>Google Sheets</li>
+        <li>Bases de datos nativas de la web</li>
+      </ul>
+
+      <h2>2. Tablas y relaciones</h2>
+      <p>
+        La información se organiza en tablas, cada una con columnas (campos) que representan un tipo de dato específico.  
+        Las tablas pueden estar relacionadas entre sí por medio de una columna común, por ejemplo un <code>ID</code> o una clave foránea.
+      </p>
+
+      <h2>3. Tipos de datos</h2>
+      <p>
+        Cada columna debe tener un tipo de dato adecuado al contenido que almacenará.  
+        Algunos ejemplos comunes son:
+      </p>
+      <ul>
+        <li><strong>Texto:</strong> para nombres o descripciones.</li>
+        <li><strong>Número:</strong> para cantidades o precios.</li>
+        <li><strong>Fecha/Hora:</strong> para registrar momentos específicos.</li>
+        <li><strong>Imagen:</strong> para guardar fotos o archivos visuales.</li>
+      </ul>
+
+      <p>
+        Estos elementos son la base de cualquier app creada en AppSheet, ya que determinan cómo se almacena, relaciona y muestra la información.
+      </p>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
