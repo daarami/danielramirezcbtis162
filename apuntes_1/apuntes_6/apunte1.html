@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apunte: ¿Qué es AppSheet? – Daniel Ramírez Valencia</title>
+  <meta name="description" content="Apunte breve y claro sobre AppSheet: qué es, cómo funciona y un ejemplo mínimo de fórmula. Ideal para apuntes rápidos." />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../img/cbtislogo.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Trabajos – <span id="studentName">Daniel Ramírez Valencia</span></span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html#inicio">Inicio</a></li>
+          <li><a href="../../index.html#parcial1">Parcial 1</a></li>
+          <li><a href="../../index.html#parcial2">Parcial 2</a></li>
+          <li><a href="../../index.html#parcial3">Parcial 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="note-container">
+    <article class="note-content fade-up">
+      <h1>¿Qué es <code>AppSheet</code>?</h1>
+
+      <p class="lead">
+        AppSheet es una plataforma web que permite crear aplicaciones para celular (apps móviles) sin necesidad de programar código tradicional. Su editor es visual: arrastras componentes, defines fuentes de datos y aplicas reglas o fórmulas para comportamientos específicos.
+      </p>
+
+      <h2>Concepto rápido</h2>
+      <p>
+        En pocas palabras: conectas una hoja de cálculo o una base de datos (por ejemplo Google Sheets, Excel en OneDrive, o una tabla en una base de datos en la nube), y AppSheet genera una app que muestra, captura y procesa esa información a través de formularios, vistas y acciones configurables.
+      </p>
+
+      <h2>Características principales</h2>
+      <ul>
+        <li>Editor visual (no-code / low-code): construyes pantallas y flujos sin escribir HTML/JS.</li>
+        <li>Conexión a datos: funciona con hojas de cálculo, bases de datos y servicios en la nube.</li>
+        <li>Fórmulas y expresiones propias: para validaciones, cálculos y lógica de negocio.</li>
+        <li>Vistas predefinidas: listas, formularios, mapas, dashboards y detalles.</li>
+        <li>Acciones y automatizaciones: botones, workflows y notificaciones (email, push).</li>
+      </ul>
+
+      <h2>¿Para qué sirve? (ejemplos prácticos)</h2>
+      <ul>
+        <li>Registrar inventarios con lector de códigos o fotos desde el celular.</li>
+        <li>Formularios de registro y encuestas que almacenan respuestas en Google Sheets.</li>
+        <li>Apps internas para equipos: seguimiento de entregas, control de mantenimiento, etc.</li>
+      </ul>
+
+      <h2>Flujo básico para crear una app</h2>
+      <ol>
+        <li>Preparar los datos: hoja de cálculo o tabla con columnas bien nombradas.</li>
+        <li>Crear proyecto en AppSheet y conectar la fuente de datos.</li>
+        <li>Configurar vistas (lista, formulario, detalle) y permisos.</li>
+        <li>Agregar validaciones, acciones y fórmulas según se requiera.</li>
+        <li>Probar en el emulador y desplegar a usuarios o instalar en el móvil.</li>
+      </ol>
+
+      <div class="btn-row" style="margin-top:1rem;">
+        <a href="../../index.html" class="btn">Volver al inicio</a>
+    </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footwrap">
+      <div>© <span id="year"></span> Daniel Ramírez Valencia. Apuntes académicos.</div>
+      <div>Contacto: <a href="mailto:daniel_ramirezv@cbtis162.edu.mx" style="color:var(--text)">daniel_ramirezv@cbtis162.edu.mx</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
